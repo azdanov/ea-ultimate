@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/Layout'
-import Seo from '../components/Index/Seo'
+import Seo from '../components/Seo'
 import Hero from '../components/Index/Hero'
 import Features from '../components/Index/Features'
 import Reviews from '../components/Index/Reviews'
