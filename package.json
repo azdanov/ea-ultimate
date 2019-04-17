@@ -27,8 +27,10 @@
     "gatsby": "2.3.16",
     "gatsby-image": "2.0.37",
     "gatsby-plugin-favicon": "3.1.6",
+    "gatsby-plugin-netlify": "2.0.13",
+    "gatsby-plugin-netlify-cache": "1.1.0",
     "gatsby-plugin-offline": "2.0.25",
-    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-plugin-postcss": "2.0.7",
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-sharp": "2.0.32",
     "gatsby-source-filesystem": "2.0.29",
@@ -37,7 +39,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.0",
-    "tailwindcss": "^1.0.0-beta.4"
+    "tailwindcss": "1.0.0-beta.4"
   },
   "devDependencies": {
     "eslint": "5.16.0",
