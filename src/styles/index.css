@@ -1,0 +1,19 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.gradient {
+  background-color: #232d7c;
+  background-image: linear-gradient(
+    to bottom left,
+    rgb(25, 33, 108) 50%,
+    rgb(45, 58, 140) 50%
+  );
+}
+
+svg text {
+  user-select: none;
+  pointer-events: none;
+}

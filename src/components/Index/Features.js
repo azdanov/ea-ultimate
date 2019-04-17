@@ -1,0 +1,63 @@
+import React from 'react'
+import Bug from '../Icons/Bug'
+import Comment from '../Icons/Comment'
+import Code from '../Icons/Code'
+import GraduationCap from '../Icons/GraduationCap'
+
+const Features = () => (
+  <article className="container">
+    <h2 id="features" className="mt-8 mb-4 font-title text-center text-4xl">
+      Features
+    </h2>
+    <div className="pb-5 flex flex-wrap">
+      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+        <Bug className="w-20 h-24 mb-1 text-red-600" />
+        <div className="px-4">
+          <div className="font-bold text-xl font-title mb-1">Extensive checks</div>
+          <p className="text-base font-body">
+            Identify bugs, security, and performance issues before they hit production
+            environment: 190 rules organized in 12 groups.
+          </p>
+        </div>
+      </section>
+      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+        <Comment className="w-20 h-24 mb-1 text-teal-600" />
+        <div className="px-4">
+          <div className="font-bold text-xl font-title mb-1">Professional support</div>
+          <p className="text-base font-body">
+            Bugs getting fixed fast, documentation gets extended with practical advice:
+            check our{` `}
+            <a
+              className="text-light-blue-vivid-700 hover:underline"
+              href="https://plugins.jetbrains.com/plugin/10215-php-inspections-ea-ultimate-"
+            >
+              latest release notes.
+            </a>
+          </p>
+        </div>
+      </section>
+      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+        <Code className="w-24 h-24 mb-1 text-indigo-600" />
+        <div className="px-4">
+          <div className="font-bold text-xl font-title mb-1">IDE integration</div>
+          <p className="text-base font-body">
+            Increase teams velocity with on-the-fly analysis and quick-fixes with our
+            addon for PhpStorm 2016.2+ and IdeaUltimate.
+          </p>
+        </div>
+      </section>
+      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+        <GraduationCap className="w-24 h-24 mb-1 text-blue-600" />
+        <div className="px-4">
+          <div className="font-bold text-xl font-title mb-1">Insightful checks</div>
+          <p className="text-base font-body">
+            Better understanding of code quality and improvement space: Architecture,
+            Probable bugs, Code Style and more.
+          </p>
+        </div>
+      </section>
+    </div>
+  </article>
+)
+
+export default Features
