@@ -5,7 +5,10 @@ import LogoTextless from '../Icons/LogoTextless'
 const Header = () => (
   <header className="container py-6">
     <nav className="font-title flex text-xl items-center">
-      <Link to="/" className="ml-2 sm:ml-0 font-semibold text-2xl tracking-tight flex items-center">
+      <Link
+        to="/"
+        className="ml-2 sm:ml-0 font-bold text-2xl tracking-tight flex items-center"
+      >
         <LogoTextless className="mr-3" />
         PHP Inspections
         <span className="absolute invisible md:relative md:visible">
