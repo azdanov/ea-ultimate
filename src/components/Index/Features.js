@@ -13,7 +13,7 @@ const Features = () => (
       <section className="w-1/2 lg:w-1/4">
         <Bug className="w-20 h-24 mb-1 text-red-600" />
         <div className="px-4">
-          <div className="font-bold text-xl font-title mb-1">Extensive checks</div>
+          <div className="font-bold text-xl font-title mb-1">Extensive Checks</div>
           <p className="text-base font-body">
             Identify bugs, security, and performance issues before they hit production
             environment: 190 rules organized in 12 groups.
@@ -23,7 +23,7 @@ const Features = () => (
       <section className="w-1/2 lg:w-1/4">
         <Comment className="w-20 h-24 mb-1 text-teal-600" />
         <div className="px-4">
-          <div className="font-bold text-xl font-title mb-1">Professional support</div>
+          <div className="font-bold text-xl font-title mb-1">Professional Support</div>
           <p className="text-base font-body">
             Bugs getting fixed fast, documentation gets extended with practical advice:
             check our{` `}
@@ -39,7 +39,7 @@ const Features = () => (
       <section className="w-1/2 lg:w-1/4">
         <Code className="w-24 h-24 mb-1 text-indigo-600" />
         <div className="px-4">
-          <div className="font-bold text-xl font-title mb-1">IDE integration</div>
+          <div className="font-bold text-xl font-title mb-1">IDE Integration</div>
           <p className="text-base font-body">
             Increase teams velocity with on-the-fly analysis and quick-fixes with our
             addon for PhpStorm 2016.2+ and IdeaUltimate.
@@ -49,7 +49,7 @@ const Features = () => (
       <section className="w-1/2 lg:w-1/4">
         <GraduationCap className="w-24 h-24 mb-1 text-blue-600" />
         <div className="px-4">
-          <div className="font-bold text-xl font-title mb-1">Insightful checks</div>
+          <div className="font-bold text-xl font-title mb-1">Insightful Checks</div>
           <p className="text-base font-body">
             Better understanding of code quality and improvement space: Architecture,
             Probable bugs, Code Style and more.
