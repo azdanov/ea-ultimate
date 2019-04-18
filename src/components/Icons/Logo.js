@@ -21,23 +21,26 @@ const Logo = properties => (
         fontStyle="italic"
         fontWeight="bold"
         letterSpacing={2.778}
+        textLength={270}
         fill="#FFF"
       >
         <tspan x={90} y={95}>
-          {`PHP`}
+          PHP
         </tspan>
         <tspan x={23} y={128}>
-          {`Inspections`}
+          Inspections
         </tspan>
-        <tspan
-          x={50}
-          y={166}
-          fontFamily="ArialNarrow, Arial Narrow"
-          fontSize={26}
-          fontWeight="normal"
-          letterSpacing={2.78}
-        >
-          {`EA Ultimate`}
+      </text>
+      <text
+        fontFamily="ArialNarrow, Arial Narrow"
+        fontSize={26}
+        fontWeight="normal"
+        letterSpacing={2.78}
+        textLength={145}
+        fill="#FFF"
+      >
+        <tspan x={50} y={166}>
+          EA Ultimate
         </tspan>
       </text>
     </g>

@@ -11,7 +11,7 @@ import Header from './Index/Header'
 import '../styles/index.css'
 
 const Layout = ({ children }) => (
-  <>
+  <div className="antialiased">
     <Header />
     <div>
       <main className="bg-cool-grey-050 clearfix pb-12">{children}</main>
@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
         </a>
       </footer>
     </div>
-  </>
+  </div>
 )
 
 Layout.propTypes = {

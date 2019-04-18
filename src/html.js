@@ -1,4 +1,4 @@
-/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/forbid-prop-types,react/no-danger */
 import React from 'react'
 import PropTypes from 'prop-types'
 
