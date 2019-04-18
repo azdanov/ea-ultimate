@@ -10,7 +10,7 @@ const Features = () => (
       Features
     </h2>
     <div className="pb-5 flex flex-wrap">
-      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <section className="w-1/2 lg:w-1/4">
         <Bug className="w-20 h-24 mb-1 text-red-600" />
         <div className="px-4">
           <div className="font-bold text-xl font-title mb-1">Extensive checks</div>
@@ -20,7 +20,7 @@ const Features = () => (
           </p>
         </div>
       </section>
-      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <section className="w-1/2 lg:w-1/4">
         <Comment className="w-20 h-24 mb-1 text-teal-600" />
         <div className="px-4">
           <div className="font-bold text-xl font-title mb-1">Professional support</div>
@@ -36,7 +36,7 @@ const Features = () => (
           </p>
         </div>
       </section>
-      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <section className="w-1/2 lg:w-1/4">
         <Code className="w-24 h-24 mb-1 text-indigo-600" />
         <div className="px-4">
           <div className="font-bold text-xl font-title mb-1">IDE integration</div>
@@ -46,7 +46,7 @@ const Features = () => (
           </p>
         </div>
       </section>
-      <section className="sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <section className="w-1/2 lg:w-1/4">
         <GraduationCap className="w-24 h-24 mb-1 text-blue-600" />
         <div className="px-4">
           <div className="font-bold text-xl font-title mb-1">Insightful checks</div>
