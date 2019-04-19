@@ -41,15 +41,15 @@ const Features = () => (
         <div className="px-4">
           <div className="font-bold text-xl font-title mb-1">IDE Integration</div>
           <p className="text-base font-body">
-            Increase teams velocity with on-the-fly analysis and quick-fixes with our
-            addon for PhpStorm 2016.2+ and IdeaUltimate.
+            Increase team's velocity with on-the-fly analysis and quick-fixes with our
+            plugin for PhpStorm 2016.2+ and IdeaUltimate.
           </p>
         </div>
       </section>
       <section className="w-1/2 lg:w-1/4">
         <GraduationCap className="w-24 h-24 mb-1 text-blue-600" />
         <div className="px-4">
-          <div className="font-bold text-xl font-title mb-1">Insightful Checks</div>
+          <div className="font-bold text-xl font-title mb-1">Insightful Hints</div>
           <p className="text-base font-body">
             Better understanding of code quality and improvement space: Architecture,
             Probable bugs, Code Style and more.
