@@ -17,3 +17,7 @@ svg text {
   user-select: none;
   pointer-events: none;
 }
+
+.transition {
+  transition: all 0.15s;
+}

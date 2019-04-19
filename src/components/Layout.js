@@ -11,11 +11,13 @@ import Header from './Index/Header'
 import '../styles/index.css'
 
 const Layout = ({ children }) => (
-  <div className="antialiased">
+  <div className="antialiased text-cool-grey-900">
     <Header />
     <div>
-      <main className="bg-cool-grey-050 clearfix pb-12">{children}</main>
-      <footer className="font-title container text-center py-6">
+      <main className="bg-cool-grey-050 clearfix pb-12 border-b border-cool-grey-100">
+        {children}
+      </main>
+      <footer className="font-title container text-center py-8">
         © {new Date().getFullYear()}
         {` `}
         <a

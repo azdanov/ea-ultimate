@@ -14,7 +14,7 @@ const Pricing = () => (
             </h3>
             <p className="text-center text-4xl font-title my-3">
               $30
-              <span className="text-lg text-gray-800"> / 1&nbsp;year</span>
+              <span className="text-lg text-gray-800"> / year</span>
             </p>
             <p className="font-bold">For our supporters in 2017</p>
             <p className="text-grey-darker text-base">
@@ -46,7 +46,7 @@ const Pricing = () => (
             target="_blank"
             rel="noopener noreferrer"
             href="https://goo.gl/forms/MOCnGsapwE5r5oQn1"
-            className="block tracking-normal border-2 border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white font-semibold text-xl py-1 px-3 mt-5 rounded shadow"
+            className="block tracking-normal border-2 border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white font-semibold text-xl py-1 px-3 mt-5 rounded shadow transition"
           >
             Get Discount!
           </a>
@@ -82,7 +82,7 @@ const Pricing = () => (
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.patreon.com/kalessil"
-            className="block tracking-normal border-2 border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white font-semibold text-xl py-1 px-3 mt-5 rounded shadow"
+            className="block tracking-normal border-2 border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white font-semibold text-xl py-1 px-3 mt-5 rounded shadow transition"
           >
             Become a Patron!
           </a>
@@ -108,7 +108,7 @@ const Pricing = () => (
             target="_blank"
             rel="noopener noreferrer"
             href="https://goo.gl/forms/MOCnGsapwE5r5oQn1"
-            className="block tracking-normal bg-light-blue-vivid-500 hover:bg-light-blue-vivid-600 text-white font-semibold text-xl py-1 px-3 rounded shadow"
+            className="block tracking-normal bg-light-blue-vivid-500 hover:bg-light-blue-vivid-600 text-white font-semibold text-xl py-1 px-3 rounded shadow transition"
           >
             Buy License!
           </a>
@@ -142,7 +142,7 @@ const Pricing = () => (
             target="_blank"
             rel="noopener noreferrer"
             href="https://goo.gl/forms/M9JJJVoPQBBbXQtX2"
-            className="block tracking-normal border-2 border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white font-semibold text-xl py-1 px-3 mt-5 rounded shadow"
+            className="block tracking-normal border-2 border-indigo-600 hover:bg-indigo-600 text-indigo-600 hover:text-white font-semibold text-xl py-1 px-3 mt-5 rounded shadow transition"
           >
             Buy Licenses!
           </a>
