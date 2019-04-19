@@ -11,7 +11,7 @@ A demo redesign of the original PHP Inspections (EA Ultimate) [old website](http
 
 | Before | After  |
 |:-:|:-:|
-| ![Screenshot Before](https://user-images.githubusercontent.com/6123841/56352592-3ca83e80-61d8-11e9-9a46-d5fc72fafe58.png)  | ![Screenshot After](https://user-images.githubusercontent.com/6123841/56352596-3dd96b80-61d8-11e9-9254-85acf4cf1bae.png)  |
+| ![Screenshot Before](https://user-images.githubusercontent.com/6123841/56352592-3ca83e80-61d8-11e9-9a46-d5fc72fafe58.png)  | ![Screenshot After](https://user-images.githubusercontent.com/6123841/56443577-fbaa4a00-62fd-11e9-8f24-e753ef3a1088.png)  |
 
 
 ## 🚀 Quick start
