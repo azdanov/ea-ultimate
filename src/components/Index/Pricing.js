@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pricing = () => (
   <article className="container">
-    <h2 id="pricing" className="my-8 font-title text-center text-4xl">
+    <h2 id="pricing" className="my-8 font-semibold font-title text-center text-4xl">
       Pricing and payment
     </h2>
     <div className="flex flex-wrap">

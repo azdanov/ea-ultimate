@@ -13,8 +13,8 @@ const Docs = ({ data }) => {
     <Layout>
       <Seo title="Docs" />
       <div className="py-8 -mb-6">
-        <div className="container bg-white pt-6 pb-10 mx-4 mx-auto w-full sm:w-5/6 md:w-4/5 lg:w-3/4 rounded">
-          <h1 className="text-4xl mx-8 sm:mx-auto w-full sm:w-5/6 md:w-4/5 lg:w-3/4">
+        <div className="container shadow bg-white pt-6 pb-10 mx-4 mx-auto w-full sm:w-5/6 md:w-4/5 lg:w-3/4 rounded">
+          <h1 className="text-3xl font-semibold mx-8 sm:mx-auto w-full sm:w-5/6 md:w-4/5 lg:w-3/4">
             Documentation
           </h1>
           <ul className="list-disc text-xl mx-8 sm:mx-auto w-full sm:w-5/6 md:w-4/5 lg:w-3/4">

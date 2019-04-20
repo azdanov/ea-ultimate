@@ -16,13 +16,15 @@ const Header = () => (
         </span>
       </Link>
       <div className="ml-auto w-56 flex justify-around">
-        <a href="#features" className="hover:underline">
+        <Link to="/#features" className="hover:underline">
           Features
-        </a>
-        <a href="#pricing" className="hover:underline">
+        </Link>
+        <Link to="/#pricing" className="hover:underline">
           Price
-        </a>
-        <Link to="/docs">Docs</Link>
+        </Link>
+        <Link to="/docs" className="hover:underline">
+          Docs
+        </Link>
       </div>
     </nav>
   </header>

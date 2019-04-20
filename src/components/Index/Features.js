@@ -6,7 +6,10 @@ import GraduationCap from '../Icons/GraduationCap'
 
 const Features = () => (
   <article className="container">
-    <h2 id="features" className="mt-8 mb-4 font-title text-center text-4xl">
+    <h2
+      id="features"
+      className="mt-8 font-semibold mb-4 font-title text-center text-4xl"
+    >
       Features
     </h2>
     <div className="pb-5 flex flex-wrap">

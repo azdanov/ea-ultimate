@@ -45,7 +45,7 @@ const DocumentationTemplate = ({ data: { github }, location }) => {
     <Layout>
       <Seo title={capitalize(name)} />
       <div className="py-8 -mb-6">
-        <div className="documentation bg-white pt-1 pb-8 w-full sm:w-5/6 md:w-4/5 lg:w-3/4 mx-auto rounded">
+        <div className="documentation shadow bg-white pt-1 pb-8 w-full sm:w-5/6 md:w-4/5 lg:w-3/4 mx-auto rounded">
           {htmlToReactParser.parseWithInstructions(
             remark()
               .use(htmlRenderer)

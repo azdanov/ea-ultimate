@@ -13,11 +13,10 @@ import '../styles/index.css'
 const Layout = ({ children }) => (
   <div className="antialiased text-cool-grey-900">
     <Header />
-    <main className="bg-cool-grey-050 pb-12 border-b border-cool-grey-100">
-      {children}
-    </main>
-    <footer className="font-title container text-center py-8">
-      © {new Date().getFullYear()}
+    <main className="bg-cool-grey-050 pb-16">{children}</main>
+    <footer className="font-title bg-cool-grey-050 text-center pb-8">
+      <div className="w-4/5 mx-auto border-t border-cool-grey-100 pb-8" />©{` `}
+      {new Date().getFullYear()}
       {` `}
       <a
         target="_blank"
