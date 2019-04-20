@@ -1,3 +1,5 @@
+require(`dotenv`).config()
+
 module.exports = {
   siteMetadata: {
     title: `Php Inspections (EA Ultimate)`,
@@ -11,6 +13,8 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-lodash`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,17 +28,14 @@ module.exports = {
         logo: `./src/images/favicon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        develop: process.env.NODE_ENV === 'development', // Enable while using `gatsby develop`
-        tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-purgecss`,
+    //   options: {
+    //     printRejected: true,
+    //     develop: process.env.NODE_ENV === `development`,
+    //     tailwind: true,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -50,8 +51,17 @@ module.exports = {
         ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `GitHub`,
+        fieldName: `github`,
+        url: `https://api.github.com/graphql`,
+        headers: {
+          Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+        },
+        fetchOptions: {},
+      },
+    },
   ],
 }

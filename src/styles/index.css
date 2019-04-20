@@ -21,3 +21,96 @@ svg text {
 .transition {
   transition: all 0.15s;
 }
+
+/**
+ * Documentation
+ */
+
+.documentation > * {
+  @apply mx-4 text-xl font-body;
+}
+
+@screen sm {
+  .documentation > * {
+    @apply mx-auto w-5/6;
+  }
+  .documentation pre {
+    padding-left: 7% !important;
+  }
+}
+@screen md {
+  .documentation > * {
+    @apply w-4/5;
+  }
+  .documentation pre {
+    padding-left: 9% !important;
+  }
+}
+@screen lg {
+  .documentation > * {
+    @apply w-3/4;
+  }
+  .documentation pre {
+    padding-left: 12% !important;
+  }
+}
+
+.documentation h1,
+.documentation h2,
+.documentation h3,
+.documentation h4 {
+  @apply font-title font-title mt-6 pb-4 font-semibold;
+}
+
+.documentation h1 {
+  @apply text-3xl;
+}
+
+.documentation h2 {
+  @apply text-2xl;
+}
+
+.documentation h3 {
+  @apply text-xl;
+}
+
+.documentation h4 {
+  @apply text-lg;
+}
+
+.documentation p {
+  @apply pb-3;
+}
+
+.documentation a {
+  @apply text-light-blue-vivid-700;
+}
+
+.documentation a:hover {
+  @apply underline;
+}
+
+.documentation ul {
+  @apply list-disc;
+}
+
+.documentation li {
+  @apply ml-4;
+}
+
+.documentation blockquote {
+  @apply mb-4;
+}
+
+.documentation p > code {
+  @apply px-1 font-body rounded bg-cool-grey-050 text-cool-grey-900;
+}
+
+.documentation blockquote > * {
+  @apply m-0 pb-1 border-l-4 border-cool-grey-100 pl-3 pt-2 mb-2 text-cool-grey-600;
+}
+
+.documentation pre {
+  @apply text-base w-full;
+  margin-bottom: 1rem !important;
+}

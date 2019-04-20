@@ -53,6 +53,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.*
 
 # gatsby files
 .cache/
@@ -75,7 +76,6 @@ yarn-error.log
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*

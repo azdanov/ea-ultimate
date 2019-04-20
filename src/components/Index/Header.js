@@ -15,13 +15,14 @@ const Header = () => (
           &nbsp;(EA&nbsp;Ultimate)
         </span>
       </Link>
-      <div className="ml-auto w-48 flex justify-around">
+      <div className="ml-auto w-56 flex justify-around">
         <a href="#features" className="hover:underline">
           Features
         </a>
         <a href="#pricing" className="hover:underline">
           Price
         </a>
+        <Link to="/docs">Docs</Link>
       </div>
     </nav>
   </header>
