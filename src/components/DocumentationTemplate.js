@@ -36,7 +36,11 @@ const htmlToReactParser = new HtmlToReactParser()
 
 const DocumentationTemplate = ({ data: { github }, location }) => {
   const name = location.pathname.split(`/`).pop()
-  const { text } = github.search.edges[0].node.object
+  let { text } = github.search.edges[0].node.object
+  text = text.replace(
+    /(images\/[\w-]+.png)/g,
+    `https://raw.githubusercontent.com/kalessil/phpinspectionsea/master/docs/$1`,
+  )
   return (
     <Layout>
       <Seo title={capitalize(name)} />
