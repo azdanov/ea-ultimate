@@ -2,8 +2,8 @@ require(`dotenv`).config()
 
 module.exports = {
   siteMetadata: {
-    title: `Php Inspections (EA Ultimate)`,
-    description: `An Ultimate Static Code Analyzer for PhpStorm.`,
+    title: `PHP Inspections`,
+    description: `A Static Code Analyzer for PHPStorm.`,
     author: `@kalessil`,
   },
   plugins: [
@@ -42,11 +42,7 @@ module.exports = {
         fonts: [
           {
             family: `Work Sans`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Quattrocento Sans`,
-            variants: [`400`, `700`],
+            variants: [`400`, `600`, `700`],
           },
         ],
       },

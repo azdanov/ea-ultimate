@@ -74,6 +74,7 @@
     "react/jsx-filename-extension": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
+    "react/no-unescaped-entities": "off",
     "react/require-default-props": "off",
     "unicorn/filename-case": "off",
     "unicorn/import-index": "off"

@@ -619,9 +619,9 @@ video {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
   }
 }
 
@@ -4489,12 +4489,8 @@ video {
   clear: both;
 }
 
-.font-title {
+.font-main {
   font-family: Work Sans, sans-serif;
-}
-
-.font-body {
-  font-family: Quattrocento Sans, sans-serif;
 }
 
 .font-hairline {
@@ -8954,6 +8950,126 @@ svg text {
   pointer-events: none;
 }
 
+.transition {
+  transition: all .15s;
+}
+
+/**
+ * Documentation
+ */
+
+.documentation > * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 576px) {
+  .documentation > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 83.33333%;
+  }
+
+  .documentation pre {
+    padding-left: 7% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .documentation > * {
+    width: 80%;
+  }
+
+  .documentation pre {
+    padding-left: 9% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .documentation > * {
+    width: 75%;
+  }
+
+  .documentation pre {
+    padding-left: 12% !important;
+  }
+}
+
+.documentation h1,
+.documentation h2,
+.documentation h3,
+.documentation h4 {
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+}
+
+.documentation h1 {
+  font-size: 1.875rem;
+}
+
+.documentation h2 {
+  font-size: 1.5rem;
+}
+
+.documentation h3 {
+  font-size: 1.25rem;
+}
+
+.documentation h4 {
+  font-size: 1.125rem;
+}
+
+.documentation p {
+  padding-bottom: .75rem;
+}
+
+.documentation a {
+  color: #127fbf;
+}
+
+.documentation a:hover {
+  text-decoration: underline;
+}
+
+.documentation ul {
+  list-style-type: disc;
+}
+
+.documentation li {
+  margin-left: 1rem;
+}
+
+.documentation blockquote {
+  margin-bottom: 1rem;
+}
+
+.documentation p > code {
+  padding-left: .25rem;
+  padding-right: .25rem;
+  border-radius: .25rem;
+  background-color: #f5f7fa;
+  color: #1f2933;
+}
+
+.documentation blockquote > * {
+  margin: 0;
+  padding-bottom: .25rem;
+  border-left-width: 4px;
+  border-color: #e4e7eb;
+  padding-left: .75rem;
+  padding-top: .5rem;
+  margin-bottom: .5rem;
+  color: #52606d;
+}
+
+.documentation pre {
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1rem !important;
+}
+
 @media (min-width: 576px) {
   .sm\:appearance-none {
     -webkit-appearance: none;
@@ -12811,12 +12927,8 @@ svg text {
     clear: both;
   }
 
-  .sm\:font-title {
+  .sm\:font-main {
     font-family: Work Sans, sans-serif;
-  }
-
-  .sm\:font-body {
-    font-family: Quattrocento Sans, sans-serif;
   }
 
   .sm\:font-hairline {
@@ -21105,12 +21217,8 @@ svg text {
     clear: both;
   }
 
-  .md\:font-title {
+  .md\:font-main {
     font-family: Work Sans, sans-serif;
-  }
-
-  .md\:font-body {
-    font-family: Quattrocento Sans, sans-serif;
   }
 
   .md\:font-hairline {
@@ -29399,12 +29507,8 @@ svg text {
     clear: both;
   }
 
-  .lg\:font-title {
+  .lg\:font-main {
     font-family: Work Sans, sans-serif;
-  }
-
-  .lg\:font-body {
-    font-family: Quattrocento Sans, sans-serif;
   }
 
   .lg\:font-hairline {
@@ -33836,7 +33940,7 @@ svg text {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .xl\:appearance-none {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -37693,12 +37797,8 @@ svg text {
     clear: both;
   }
 
-  .xl\:font-title {
+  .xl\:font-main {
     font-family: Work Sans, sans-serif;
-  }
-
-  .xl\:font-body {
-    font-family: Quattrocento Sans, sans-serif;
   }
 
   .xl\:font-hairline {

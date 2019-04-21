@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Reviews = () => (
-  <article className="py-6 my-6 bg-indigo-400 font-title">
+  <article className="py-6 my-6 bg-indigo-400">
     <p className="text-center text-3xl text-white tracking-tighter">
       Interested in what people say about us?{` `}
       <a

@@ -9,6 +9,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import HtmlToReact from 'html-to-react'
 import Seo from './Seo'
 import Layout from './Layout'
+import DocumentationLayout from './DocumentationLayout'
 
 const HtmlToReactParser = HtmlToReact.Parser
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
@@ -44,8 +45,8 @@ const DocumentationTemplate = ({ data: { github }, location }) => {
   return (
     <Layout>
       <Seo title={capitalize(name)} />
-      <div className="py-8 -mb-6">
-        <div className="documentation shadow bg-white pt-1 pb-8 w-full sm:w-5/6 md:w-4/5 lg:w-3/4 mx-auto rounded">
+      <DocumentationLayout>
+        <div className="documentation">
           {htmlToReactParser.parseWithInstructions(
             remark()
               .use(htmlRenderer)
@@ -54,7 +55,7 @@ const DocumentationTemplate = ({ data: { github }, location }) => {
             processingInstructions,
           )}
         </div>
-      </div>
+      </DocumentationLayout>
     </Layout>
   )
 }

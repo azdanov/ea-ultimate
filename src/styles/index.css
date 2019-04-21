@@ -27,7 +27,7 @@ svg text {
  */
 
 .documentation > * {
-  @apply mx-4 text-xl font-body;
+  @apply mx-4 text-xl;
 }
 
 @screen sm {
@@ -59,7 +59,7 @@ svg text {
 .documentation h2,
 .documentation h3,
 .documentation h4 {
-  @apply font-title font-title mt-6 pb-4 font-semibold;
+  @apply mt-2 mb-6 font-semibold;
 }
 
 .documentation h1 {
@@ -78,8 +78,8 @@ svg text {
   @apply text-lg;
 }
 
-.documentation p {
-  @apply pb-3;
+p {
+  @apply mb-3;
 }
 
 .documentation a {
@@ -103,7 +103,7 @@ svg text {
 }
 
 .documentation p > code {
-  @apply px-1 font-body rounded bg-cool-grey-050 text-cool-grey-900;
+  @apply px-1 rounded bg-cool-grey-050 text-cool-grey-900;
 }
 
 .documentation blockquote > * {

@@ -40,7 +40,7 @@ const Logo = properties => (
         fill="#FFF"
       >
         <tspan x={50} y={166}>
-          EA Ultimate
+          {properties.brand || `EA Ultimate`}
         </tspan>
       </text>
     </g>
