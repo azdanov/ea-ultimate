@@ -28,14 +28,13 @@ module.exports = {
         logo: `./src/images/favicon.png`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: true,
-    //     develop: process.env.NODE_ENV === `development`,
-    //     tailwind: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        tailwind: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
