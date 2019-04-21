@@ -95,7 +95,7 @@ p {
 }
 
 .documentation p > code {
-  @apply px-1 rounded bg-cool-grey-050 text-cool-grey-900;
+  @apply text-base px-1 inline-flex rounded bg-cool-grey-050 text-cool-grey-900;
 }
 
 .documentation blockquote > * {
