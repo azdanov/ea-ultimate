@@ -9,9 +9,9 @@ import HtmlToReact from 'html-to-react'
 import slug from 'remark-slug'
 import headings from 'remark-autolink-headings'
 import theme from '../styles/prism'
-import Seo from './Seo'
-import Layout from './Layout'
-import DocumentationLayout from './DocumentationLayout'
+import Seo from '../components/Seo'
+import Layout from '../components/Layout'
+import LayoutDocs from '../components/LayoutDocs'
 
 const HtmlToReactParser = HtmlToReact.Parser
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
@@ -37,7 +37,7 @@ const processingInstructions = [
 ]
 const htmlToReactParser = new HtmlToReactParser()
 
-const DocumentationTemplate = ({ data: { github }, location, pageContext }) => {
+const Docs = ({ data: { github }, location, pageContext }) => {
   const name = location.pathname.split(`/`).pop()
   let { text } = github.search.edges[0].node.object
   text = text.replace(
@@ -51,7 +51,7 @@ const DocumentationTemplate = ({ data: { github }, location, pageContext }) => {
   return (
     <Layout>
       <Seo title={capitalize(name)} />
-      <DocumentationLayout>
+      <LayoutDocs>
         <div className="documentation">
           {htmlToReactParser.parseWithInstructions(
             remark()
@@ -71,14 +71,15 @@ const DocumentationTemplate = ({ data: { github }, location, pageContext }) => {
             </p>
           </blockquote>
         </div>
-      </DocumentationLayout>
+      </LayoutDocs>
     </Layout>
   )
 }
 
-DocumentationTemplate.propTypes = {
+Docs.propTypes = {
   data: PropTypes.shape({}),
   location: PropTypes.shape({}),
+  pageContext: PropTypes.shape({location: PropTypes.string}),
 }
 
 export const query = graphql`
@@ -101,4 +102,4 @@ export const query = graphql`
   }
 `
 
-export default DocumentationTemplate
+export default Docs

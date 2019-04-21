@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import Logo from '../components/Icons/Logo'
-import DocumentationLayout from '../components/DocumentationLayout'
+import Logo from '../components/icons/Logo'
+import LayoutDocs from '../components/LayoutDocs'
 
 const Index = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <DocumentationLayout>
+      <LayoutDocs>
         <div className="w-5/6 mx-auto">
           <div className="flex items-center mb-6">
             <Logo brand="EA Extended" width="8rem" height="8rem" />
@@ -57,7 +57,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-      </DocumentationLayout>
+      </LayoutDocs>
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import LogoTextless from './Icons/LogoTextless'
+import LogoTextless from './icons/LogoTextless'
 
 const Header = () => (
   <header className="container py-6">

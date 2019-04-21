@@ -4,11 +4,11 @@ import '../styles/index.css'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import { capitalize } from 'lodash'
 import { createPath } from '../utils'
-import GitHub from './Icons/Github'
-import Twitter from './Icons/Twitter'
-import Patreon from './Icons/Patreon'
+import GitHub from './icons/Github'
+import Twitter from './icons/Twitter'
+import Patreon from './icons/Patreon'
 
-const DocumentationLayout = ({ children }) => {
+const LayoutDocs = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       github {
@@ -110,8 +110,8 @@ const DocumentationLayout = ({ children }) => {
   )
 }
 
-DocumentationLayout.propTypes = {
+LayoutDocs.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default DocumentationLayout
+export default LayoutDocs

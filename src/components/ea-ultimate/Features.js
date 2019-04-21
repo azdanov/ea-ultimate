@@ -1,8 +1,8 @@
 import React from 'react'
-import Bug from '../Icons/Bug'
-import Comment from '../Icons/Comment'
-import Code from '../Icons/Code'
-import GraduationCap from '../Icons/GraduationCap'
+import Bug from '../icons/Bug'
+import Comment from '../icons/Comment'
+import Code from '../icons/Code'
+import GraduationCap from '../icons/GraduationCap'
 
 const Features = () => (
   <article className="container">

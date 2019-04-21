@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prevent-abbreviations */
 module.exports = {
   transform: {
     '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,

@@ -34,7 +34,7 @@ module.exports.createPages = async ({ actions, graphql }) => {
       if (!name.endsWith(`.md`)) return
       actions.createPage({
         path: `docs/${createPath(name)}`,
-        component: path.resolve(`./src/components/DocumentationTemplate.js`),
+        component: path.resolve(`./src/templates/docs.js`),
         context: {
           location: `master:docs/${name}`,
         },

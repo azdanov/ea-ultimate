@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es6": true,
@@ -77,6 +78,7 @@
     "react/no-unescaped-entities": "off",
     "react/require-default-props": "off",
     "unicorn/filename-case": "off",
-    "unicorn/import-index": "off"
+    "unicorn/import-index": "off",
+    "unicorn/prevent-abbreviations": "off"
   }
 }

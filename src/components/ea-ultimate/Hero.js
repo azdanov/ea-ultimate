@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Icons/Logo'
+import Logo from '../icons/Logo'
 
 const Hero = () => (
   <div className="gradient">
