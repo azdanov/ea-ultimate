@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import remark from 'remark'
 import htmlRenderer from 'remark-html'
@@ -57,7 +57,8 @@ const Docs = ({ data: { github }, location, pageContext }) => {
     .split(`/`)
     .pop()}`
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    slugger.reset()
     const list = []
 
     remark()

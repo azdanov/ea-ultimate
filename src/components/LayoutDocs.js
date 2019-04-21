@@ -84,7 +84,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
               const subMenu = () => (
                 <ul className="border-l-2 border-cool-grey-100 mt-2 leading-tight">
                   {headingList.map(({ id, text }) => (
-                    <li key={id} className="text-base mb-2">
+                    <li key={id} className="text-base mb-2 overflow-hidden">
                       <Link
                         to={`docs/${createPath(name)}/#${id}`}
                         className={`inline-block hover:underline ml-3`}
@@ -97,7 +97,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
                 </ul>
               )
               return (
-                <li key={oid} className="text-base mb-2">
+                <li key={oid} className="text-base mb-2 overflow-hidden">
                   <Link
                     to={`docs/${createPath(name)}`}
                     className="hover:underline"
