@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import remark from 'remark'
 import htmlRenderer from 'remark-html'
@@ -8,11 +8,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import HtmlToReact from 'html-to-react'
 import slug from 'remark-slug'
 import headings from 'remark-autolink-headings'
+import GithubSlugger from 'github-slugger'
 import theme from '../styles/prism'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import LayoutDocs from '../components/LayoutDocs'
 
+const slugger = new GithubSlugger()
 const HtmlToReactParser = HtmlToReact.Parser
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
 const processingInstructions = [
@@ -38,7 +40,13 @@ const processingInstructions = [
 const htmlToReactParser = new HtmlToReactParser()
 
 const Docs = ({ data: { github }, location, pageContext }) => {
-  const name = location.pathname.split(`/`).pop()
+  const [headingList, setHeadingList] = useState([])
+  console.log(location)
+  const name = location.pathname
+    .replace(/\/$/, ``)
+    .split(`/`)
+    .pop()
+
   let { text } = github.repository.object
   text = text.replace(
     /(images\/[\w-]+.png)/g,
@@ -48,10 +56,35 @@ const Docs = ({ data: { github }, location, pageContext }) => {
   const link = `https://github.com/kalessil/phpinspectionsea/blob/master/docs/${pageContext.location
     .split(`/`)
     .pop()}`
+
+  useEffect(() => {
+    const list = []
+
+    remark()
+      .use(() => {
+        return tree => {
+          list.push(
+            ...tree.children
+              .filter(({ type }) => type === `heading`)
+              .map(child => {
+                return {
+                  parent: name,
+                  id: slugger.slug(child.children[child.children.length - 1].value),
+                  text: child.children[child.children.length - 1].value,
+                }
+              }),
+          )
+        }
+      })
+      .processSync(text)
+
+    setHeadingList(list)
+  }, [])
+
   return (
     <Layout>
       <Seo title={capitalize(name)} />
-      <LayoutDocs>
+      <LayoutDocs headingList={headingList} docName={name}>
         <div className="documentation">
           {htmlToReactParser.parseWithInstructions(
             remark()

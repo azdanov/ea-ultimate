@@ -8,7 +8,7 @@ import GitHub from './icons/Github'
 import Twitter from './icons/Twitter'
 import Patreon from './icons/Patreon'
 
-const LayoutDocs = ({ children }) => {
+const LayoutDocs = ({ children, headingList, docName }) => {
   const data = useStaticQuery(graphql`
     query {
       github {
@@ -30,9 +30,9 @@ const LayoutDocs = ({ children }) => {
   const { entries } = data.github.repository.object
 
   return (
-    <div className="flex container mx-auto pt-10">
-      <div className="w-64 ml-3 mt-4">
-        <div className="docs-menu">
+    <div className="flex md:mx-3 pt-10">
+      <div className="w-64 mx-3 mt-4">
+        <div className="docs-menu h-screen overflow-scroll">
           <div className="w-24 flex justify-between text-cool-grey-400 mb-6">
             <a
               target="_blank"
@@ -80,15 +80,33 @@ const LayoutDocs = ({ children }) => {
             </li>
             {entries.map(({ name, oid }) => {
               if (!name.endsWith(`.md`)) return null
+              const doc = name.replace(`.md`, ``).toLowerCase()
+              const subMenu = () => (
+                <ul className="border-l-2 border-cool-grey-100 mt-2 leading-tight">
+                  {headingList.map(({ id, text }) => (
+                    <li key={id} className="text-base mb-2">
+                      <Link
+                        to={`docs/${createPath(name)}/#${id}`}
+                        className={`inline-block hover:underline ml-3`}
+                        activeClassName="underline"
+                      >
+                        {capitalize(text)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )
               return (
                 <li key={oid} className="text-base mb-2">
                   <Link
                     to={`docs/${createPath(name)}`}
                     className="hover:underline"
                     activeClassName="underline"
+                    partiallyActive
                   >
-                    {capitalize(name.replace(`.md`, ``))}
+                    {capitalize(doc)}
                   </Link>
+                  {doc === docName ? subMenu() : null}
                 </li>
               )
             })}
@@ -104,6 +122,14 @@ const LayoutDocs = ({ children }) => {
 
 LayoutDocs.propTypes = {
   children: PropTypes.node.isRequired,
+  docName: PropTypes.string,
+  headingList: PropTypes.arrayOf(
+    PropTypes.shape({
+      level: PropTypes.number,
+      url: PropTypes.string,
+      text: PropTypes.string,
+    }),
+  ),
 }
 
 export default LayoutDocs

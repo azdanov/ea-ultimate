@@ -27,6 +27,10 @@ p {
   @apply mb-3;
 }
 
+li {
+  @apply overflow-auto;
+}
+
 .docs-menu {
   position: sticky;
   top: 2rem;
@@ -34,6 +38,10 @@ p {
 
 .icon {
   display: none;
+}
+
+.w-72 {
+  width: '18rem';
 }
 
 .documentation h1:hover .icon,
