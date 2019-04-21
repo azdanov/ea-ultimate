@@ -33,6 +33,8 @@ module.exports = {
       options: {
         printRejected: true,
         tailwind: true,
+        whitelist: [`img`],
+        // develop: true,
       },
     },
     {

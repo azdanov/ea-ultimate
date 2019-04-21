@@ -22,12 +22,7 @@ const processingInstructions = [
       const nodeToProcess = node.children[0].name === `code` ? node.children[0] : node
       const language = nodeToProcess.attribs.class.split(`-`).pop()
       return (
-        <SyntaxHighlighter
-          key={index}
-          language={language}
-          style={theme}
-          className="shadow"
-        >
+        <SyntaxHighlighter key={index} language={language} style={theme}>
           {nodeToProcess.children.map(n => n.data).join(``)}
         </SyntaxHighlighter>
       )

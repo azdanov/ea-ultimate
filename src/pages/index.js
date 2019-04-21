@@ -31,7 +31,7 @@ const Index = () => {
           </div>
           <div className="text-xl">
             <p>It covers:</p>
-            <ul>
+            <ul className="list-disc ml-8">
               <li>architecture related issues</li>
               <li>weak types control and possible code construct simplifications</li>
               <li>performance issues</li>

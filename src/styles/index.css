@@ -44,23 +44,30 @@ p {
 .documentation h2,
 .documentation h3,
 .documentation h4 {
-  @apply mt-2 mb-6 font-semibold;
+  @apply mt-2 mb-4 font-semibold;
+}
+
+.documentation h1:not(:first-child),
+.documentation h2:not(:first-child),
+.documentation h3:not(:first-child),
+.documentation h4:not(:first-child) {
+  @apply mt-6;
 }
 
 .documentation h1 {
-  @apply text-3xl leading-tight;
+  @apply text-4xl leading-tight;
 }
 
 .documentation h2 {
-  @apply text-2xl;
+  @apply text-3xl;
 }
 
 .documentation h3 {
-  @apply text-xl;
+  @apply text-2xl;
 }
 
 .documentation h4 {
-  @apply text-lg;
+  @apply text-xl;
 }
 
 .documentation a {

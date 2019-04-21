@@ -103,7 +103,7 @@ const DocumentationLayout = ({ children }) => {
           </ul>
         </div>
       </div>
-      <main className="w-4/5 shadow bg-white py-8 pb-8 ml-auto rounded">
+      <main className="w-4/5 bg-white py-8 pb-8 ml-auto rounded border border-cool-gray-100">
         {children}
       </main>
     </div>
