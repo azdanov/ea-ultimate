@@ -39,7 +39,7 @@ const htmlToReactParser = new HtmlToReactParser()
 
 const Docs = ({ data: { github }, location, pageContext }) => {
   const name = location.pathname.split(`/`).pop()
-  let { text } = github.search.edges[0].node.object
+  let { text } = github.repository.object
   text = text.replace(
     /(images\/[\w-]+.png)/g,
     `https://raw.githubusercontent.com/kalessil/phpinspectionsea/master/docs/$1`,
@@ -79,21 +79,17 @@ const Docs = ({ data: { github }, location, pageContext }) => {
 Docs.propTypes = {
   data: PropTypes.shape({}),
   location: PropTypes.shape({}),
-  pageContext: PropTypes.shape({location: PropTypes.string}),
+  pageContext: PropTypes.shape({ location: PropTypes.string }),
 }
 
 export const query = graphql`
   query($location: String!) {
     github {
-      search(first: 1, type: REPOSITORY, query: "repo:kalessil/phpinspectionsea") {
-        edges {
-          node {
-            ... on GitHub_Repository {
-              object(expression: $location) {
-                ... on GitHub_Blob {
-                  text
-                }
-              }
+      repository(owner: "kalessil", name: "phpinspectionsea") {
+        ... on GitHub_Repository {
+          object(expression: $location) {
+            ... on GitHub_Blob {
+              text
             }
           }
         }

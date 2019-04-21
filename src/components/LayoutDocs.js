@@ -12,21 +12,13 @@ const LayoutDocs = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       github {
-        files: search(
-          first: 1
-          type: REPOSITORY
-          query: "repo:kalessil/phpinspectionsea"
-        ) {
-          edges {
-            node {
-              ... on GitHub_Repository {
-                object(expression: "master:docs/") {
-                  ... on GitHub_Tree {
-                    entries {
-                      name
-                      oid
-                    }
-                  }
+        repository(owner: "kalessil", name: "phpinspectionsea") {
+          ... on GitHub_Repository {
+            object(expression: "master:docs/") {
+              ... on GitHub_Tree {
+                entries {
+                  name
+                  oid
                 }
               }
             }
@@ -35,7 +27,7 @@ const LayoutDocs = ({ children }) => {
       }
     }
   `)
-  const { entries } = data.github.files.edges[0].node.object
+  const { entries } = data.github.repository.object
 
   return (
     <div className="flex container mx-auto pt-10">

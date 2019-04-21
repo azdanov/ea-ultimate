@@ -5,20 +5,12 @@ module.exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
     query {
       github {
-        files: search(
-          first: 1
-          type: REPOSITORY
-          query: "repo:kalessil/phpinspectionsea"
-        ) {
-          edges {
-            node {
-              ... on GitHub_Repository {
-                object(expression: "master:docs/") {
-                  ... on GitHub_Tree {
-                    entries {
-                      name
-                    }
-                  }
+        files: repository(owner: "kalessil", name: "phpinspectionsea") {
+          ... on GitHub_Repository {
+            object(expression: "master:docs/") {
+              ... on GitHub_Tree {
+                entries {
+                  name
                 }
               }
             }
@@ -28,7 +20,7 @@ module.exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  data.github.files.edges[0].node.object.entries.forEach(
+  data.github.repository.object.entries.forEach(
     /** @param {string} name */
     ({ name }) => {
       if (!name.endsWith(`.md`)) return

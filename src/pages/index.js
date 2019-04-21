@@ -34,17 +34,17 @@ const Index = () => {
           <div className="text-xl">
             <p>It covers:</p>
             <ul className="list-disc ml-8">
-              <li>architecture related issues</li>
-              <li>weak types control and possible code construct simplifications</li>
-              <li>performance issues</li>
-              <li>non-optimal, duplicate and suspicious "if" conditions</li>
-              <li>validation of magic methods usage</li>
-              <li>regular expressions</li>
-              <li>validation of exception handling workflow</li>
-              <li>compatibility issues</li>
-              <li>variety of time-consuming bugs</li>
-              <li>PhpUnit API usage</li>
-              <li>security issues</li>
+              <li>Architecture Related Issues</li>
+              <li>Weak Types Control and Possible Code Construct Simplifications</li>
+              <li>Performance Issues</li>
+              <li>Non-Optimal, Duplicate and Suspicious "if" Conditions</li>
+              <li>Validation of Magic Methods Usage</li>
+              <li>Regular Expressions</li>
+              <li>Validation of Exception Handling Workflow</li>
+              <li>Compatibility Issues</li>
+              <li>Variety of Time-consuming Bugs</li>
+              <li>PHPUnit API Usage</li>
+              <li>Security Issues</li>
             </ul>
             <p>
               Some of inspections are expecting conditional statements (e.g. "if") to
