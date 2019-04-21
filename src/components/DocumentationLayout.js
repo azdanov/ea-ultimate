@@ -39,7 +39,7 @@ const DocumentationLayout = ({ children }) => {
 
   return (
     <div className="flex container mx-auto pt-10">
-      <div className="w-64 ml-3 mt-3">
+      <div className="w-64 ml-3 mt-4">
         <div className="docs-menu">
           <div className="w-24 flex justify-between text-cool-grey-400 mb-6">
             <a

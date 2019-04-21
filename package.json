@@ -51,8 +51,10 @@
     "react-helmet": "5.2.0",
     "react-syntax-highlighter": "^10.2.1",
     "remark": "^10.0.1",
+    "remark-autolink-headings": "^5.2.0",
     "remark-html": "^9.0.0",
     "remark-react": "^5.0.1",
+    "remark-slug": "^5.1.1",
     "tailwindcss": "1.0.0-beta.4"
   },
   "devDependencies": {

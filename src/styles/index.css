@@ -32,6 +32,41 @@ p {
   top: 2rem;
 }
 
+.icon {
+  display: none;
+}
+
+.documentation h1:hover .icon,
+.documentation h2:hover .icon,
+.documentation h3:hover .icon,
+.documentation h4:hover .icon,
+.documentation .icon:hover {
+  @apply float-left block;
+  margin-left: -2.5rem;
+  padding-right: 2.5rem;
+}
+
+.icon-link {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgCiAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImN1cnJlbnRDb2xvciI+CiAgPHBhdGggZD0iTTMuOSwxMkMzLjksMTAuMjkgNS4yOSw4LjkgNyw4LjlIMTFWN0g3QTUsNSAwIDAsMCAyLDEyQTUsNSAwIDAsMCA3LDE3SDExVjE1LjFIN0M1LjI5LDE1LjEgMy45LDEzLjcxIDMuOSwxMk04LDEzSDE2VjExSDhWMTNNMTcsN0gxM1Y4LjlIMTdDMTguNzEsOC45IDIwLjEsMTAuMjkgMjAuMSwxMkMyMC4xLDEzLjcxIDE4LjcxLDE1LjEgMTcsMTUuMUgxM1YxN0gxN0E1LDUgMCAwLDAgMjIsMTJBNSw1IDAgMCwwIDE3LDdaIiAvPgo8L3N2Zz4=')
+    center center no-repeat;
+}
+
+.documentation h1 .icon {
+  height: 2.8rem;
+}
+
+.documentation h2 .icon {
+  height: 2.8rem;
+}
+
+.documentation h3 .icon {
+  height: 2.3rem;
+}
+
+.documentation h4 .icon {
+  height: 2.2rem;
+}
+
 /**
  * Documentation
  */

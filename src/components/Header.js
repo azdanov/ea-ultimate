@@ -14,7 +14,7 @@ const Header = () => (
       </Link>
       <div className="ml-auto w-56 flex justify-around">
         <Link to="/" className="hover:underline">
-          Home
+          Docs
         </Link>
         <Link to="/ea-ultimate" className="hover:underline">
           EA Ultimate

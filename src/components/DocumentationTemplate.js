@@ -6,6 +6,8 @@ import htmlRenderer from 'remark-html'
 import { capitalize, constant } from 'lodash'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import HtmlToReact from 'html-to-react'
+import slug from 'remark-slug'
+import headings from 'remark-autolink-headings'
 import theme from '../styles/prism'
 import Seo from './Seo'
 import Layout from './Layout'
@@ -35,13 +37,17 @@ const processingInstructions = [
 ]
 const htmlToReactParser = new HtmlToReactParser()
 
-const DocumentationTemplate = ({ data: { github }, location }) => {
+const DocumentationTemplate = ({ data: { github }, location, pageContext }) => {
   const name = location.pathname.split(`/`).pop()
   let { text } = github.search.edges[0].node.object
   text = text.replace(
     /(images\/[\w-]+.png)/g,
     `https://raw.githubusercontent.com/kalessil/phpinspectionsea/master/docs/$1`,
   )
+
+  const link = `https://github.com/kalessil/phpinspectionsea/blob/master/docs/${pageContext.location
+    .split(`/`)
+    .pop()}`
   return (
     <Layout>
       <Seo title={capitalize(name)} />
@@ -49,11 +55,21 @@ const DocumentationTemplate = ({ data: { github }, location }) => {
         <div className="documentation">
           {htmlToReactParser.parseWithInstructions(
             remark()
+              .use(slug)
+              .use(headings)
               .use(htmlRenderer)
               .processSync(text).contents,
             constant(true),
             processingInstructions,
           )}
+          <blockquote className="mt-8">
+            <p>
+              Found a typo or have an improvement?{` `}
+              <a target="_blank" rel="noopener noreferrer" href={link}>
+                Edit this page.
+              </a>
+            </p>
+          </blockquote>
         </div>
       </DocumentationLayout>
     </Layout>

@@ -19,6 +19,8 @@ const Index = () => {
               <p className="text-cool-grey-500">
                 This project is an OSS Static Code Analysis{` `}
                 <a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-light-blue-vivid-700 hover:underline"
                   href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-"
                 >
