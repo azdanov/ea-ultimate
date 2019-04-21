@@ -4,6 +4,9 @@ import '../styles/index.css'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import { capitalize } from 'lodash'
 import { createPath } from '../utils'
+import GitHub from './Icons/Github'
+import Twitter from './Icons/Twitter'
+import Patreon from './Icons/Patreon'
 
 const DocumentationLayout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,9 +38,47 @@ const DocumentationLayout = ({ children }) => {
   const { entries } = data.github.files.edges[0].node.object
 
   return (
-    <div>
-      <div className="flex container mx-auto pt-10">
-        <div className="w-64 ml-3 py-12">
+    <div className="flex container mx-auto pt-10">
+      <div className="w-64 ml-3 mt-3">
+        <div className="docs-menu">
+          <div className="w-24 flex justify-between text-cool-grey-400 mb-6">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.patreon.com/kalessil"
+              aria-label="Patreon"
+            >
+              <Patreon
+                width="1.5rem"
+                height="1.5rem"
+                className="hover:text-cool-grey-700"
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/kalessil"
+              aria-label="Twitter"
+            >
+              <Twitter
+                width="1.5rem"
+                height="1.5rem"
+                className="hover:text-cool-grey-700"
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/kalessil/phpinspectionsea"
+              aria-label="GitHub"
+            >
+              <GitHub
+                width="1.5rem"
+                height="1.5rem"
+                className="hover:text-cool-grey-700"
+              />
+            </a>
+          </div>
           <ul className="text-xl sm:mx-auto">
             <li className="text-cool-grey-500 mb-3">Documentation</li>
             <li className="text-base mb-2">
@@ -61,10 +102,10 @@ const DocumentationLayout = ({ children }) => {
             })}
           </ul>
         </div>
-        <main className="w-4/5 shadow bg-white py-6 pb-8 ml-auto rounded">
-          {children}
-        </main>
       </div>
+      <main className="w-4/5 shadow bg-white py-8 pb-8 ml-auto rounded">
+        {children}
+      </main>
     </div>
   )
 }

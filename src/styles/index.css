@@ -22,37 +22,22 @@ svg text {
   transition: all 0.15s;
 }
 
+ul,
+p {
+  @apply mb-3;
+}
+
+.docs-menu {
+  position: sticky;
+  top: 2rem;
+}
+
 /**
  * Documentation
  */
 
 .documentation > * {
   @apply mx-4 text-xl;
-}
-
-@screen sm {
-  .documentation > * {
-    @apply mx-auto w-5/6;
-  }
-  .documentation pre {
-    padding-left: 7% !important;
-  }
-}
-@screen md {
-  .documentation > * {
-    @apply w-4/5;
-  }
-  .documentation pre {
-    padding-left: 9% !important;
-  }
-}
-@screen lg {
-  .documentation > * {
-    @apply w-3/4;
-  }
-  .documentation pre {
-    padding-left: 12% !important;
-  }
 }
 
 .documentation h1,
@@ -63,7 +48,7 @@ svg text {
 }
 
 .documentation h1 {
-  @apply text-3xl;
+  @apply text-3xl leading-tight;
 }
 
 .documentation h2 {
@@ -78,10 +63,6 @@ svg text {
   @apply text-lg;
 }
 
-p {
-  @apply mb-3;
-}
-
 .documentation a {
   @apply text-light-blue-vivid-700;
 }
@@ -90,12 +71,16 @@ p {
   @apply underline;
 }
 
-.documentation ul {
-  @apply list-disc;
-}
-
 .documentation li {
   @apply ml-4;
+  list-style: disc;
+}
+.documentation li li {
+  @apply ml-6;
+  list-style: circle;
+}
+.documentation li li li {
+  list-style: square;
 }
 
 .documentation blockquote {
@@ -111,6 +96,23 @@ p {
 }
 
 .documentation pre {
-  @apply text-base w-full;
+  @apply text-base rounded;
+  margin: 0 auto !important;
   margin-bottom: 1rem !important;
+}
+
+@screen sm {
+  .documentation > * {
+    @apply mx-auto w-5/6;
+  }
+}
+@screen md {
+  .documentation > * {
+    @apply w-4/5;
+  }
+}
+@screen lg {
+  .documentation > * {
+    @apply w-3/4;
+  }
 }

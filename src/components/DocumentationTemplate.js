@@ -5,8 +5,8 @@ import remark from 'remark'
 import htmlRenderer from 'remark-html'
 import { capitalize, constant } from 'lodash'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import HtmlToReact from 'html-to-react'
+import theme from '../styles/prism'
 import Seo from './Seo'
 import Layout from './Layout'
 import DocumentationLayout from './DocumentationLayout'
@@ -22,7 +22,12 @@ const processingInstructions = [
       const nodeToProcess = node.children[0].name === `code` ? node.children[0] : node
       const language = nodeToProcess.attribs.class.split(`-`).pop()
       return (
-        <SyntaxHighlighter key={index} language={language} style={darcula}>
+        <SyntaxHighlighter
+          key={index}
+          language={language}
+          style={theme}
+          className="shadow"
+        >
           {nodeToProcess.children.map(n => n.data).join(``)}
         </SyntaxHighlighter>
       )
