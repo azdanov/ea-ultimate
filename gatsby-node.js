@@ -5,7 +5,7 @@ module.exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
     query {
       github {
-        files: repository(owner: "kalessil", name: "phpinspectionsea") {
+        repository(owner: "kalessil", name: "phpinspectionsea") {
           ... on GitHub_Repository {
             object(expression: "master:docs/") {
               ... on GitHub_Tree {
