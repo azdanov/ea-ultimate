@@ -10,7 +10,7 @@ const Header = () => (
         className="ml-2 sm:ml-0 font-bold text-2xl tracking-tight flex items-center"
       >
         <LogoTextless className="mr-3" />
-        PHP Inspections
+        PHP Inspections (EA Extended)
       </Link>
       <div className="ml-auto w-56 flex justify-around">
         <Link to="/" className="hover:underline">

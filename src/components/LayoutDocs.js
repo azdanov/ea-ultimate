@@ -28,8 +28,8 @@ const LayoutDocs = ({ children, headingList, docName }) => {
   const { entries } = data.github.repository.object
 
   return (
-    <div className="flex md:mx-3 pt-10">
-      <div className="w-64 ml-3 pb-10 pr-3 mt-4 docs-menu h-screen overflow-auto">
+    <div className="flex">
+      <div className="w-64 ml-3 pb-10 pr-3 mt-8 docs-menu h-screen overflow-auto">
         <div className="w-24 flex justify-between text-cool-grey-400 mb-4">
           <a
             target="_blank"
@@ -109,8 +109,8 @@ const LayoutDocs = ({ children, headingList, docName }) => {
           })}
         </ul>
       </div>
-      <main className="w-4/5 bg-white py-8 pb-8 ml-auto rounded border border-cool-gray-100">
-        {children}
+      <main className="w-4/5 bg-white pb-8 -mb-16 ml-auto border-l border-cool-gray-100">
+        <div className="mt-8">{children}</div>
       </main>
     </div>
   )
