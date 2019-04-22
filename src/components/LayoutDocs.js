@@ -7,6 +7,7 @@ import { createPath } from '../utils'
 import GitHub from './icons/Github'
 import Twitter from './icons/Twitter'
 import Patreon from './icons/Patreon'
+import JetBrains from './icons/JetBrains'
 
 const LayoutDocs = ({ children, headingList, docName }) => {
   const data = useStaticQuery(graphql`
@@ -30,7 +31,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
   return (
     <div className="flex">
       <div className="w-64 ml-3 pb-10 pr-3 mt-8 docs-menu h-screen overflow-auto">
-        <div className="w-24 flex justify-between text-cool-grey-400 mb-4">
+        <div className="w-32 flex justify-between text-cool-grey-400 mb-4">
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -62,6 +63,18 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             aria-label="GitHub"
           >
             <GitHub
+              width="1.5rem"
+              height="1.5rem"
+              className="hover:text-cool-grey-700"
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-"
+            aria-label="JetBrains"
+          >
+            <JetBrains
               width="1.5rem"
               height="1.5rem"
               className="hover:text-cool-grey-700"
