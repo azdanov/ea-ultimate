@@ -6,12 +6,10 @@ module.exports.createPages = async ({ actions, graphql }) => {
     query {
       github {
         repository(owner: "kalessil", name: "phpinspectionsea") {
-          ... on GitHub_Repository {
-            object(expression: "master:docs/") {
-              ... on GitHub_Tree {
-                entries {
-                  name
-                }
+          object(expression: "master:docs/") {
+            ... on GitHub_Tree {
+              entries {
+                name
               }
             }
           }

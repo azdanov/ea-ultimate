@@ -120,11 +120,9 @@ export const query = graphql`
   query($location: String!) {
     github {
       repository(owner: "kalessil", name: "phpinspectionsea") {
-        ... on GitHub_Repository {
-          object(expression: $location) {
-            ... on GitHub_Blob {
-              text
-            }
+        object(expression: $location) {
+          ... on GitHub_Blob {
+            text
           }
         }
       }

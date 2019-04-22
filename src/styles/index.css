@@ -27,13 +27,13 @@ p {
   @apply mb-3;
 }
 
-li {
-  @apply overflow-auto;
+.docs-menu li {
+  @apply overflow-hidden;
 }
 
 .docs-menu {
   position: sticky;
-  top: 2rem;
+  top: 1rem;
 }
 
 .icon {
