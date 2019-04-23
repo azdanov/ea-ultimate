@@ -23,6 +23,7 @@ A demo redesign of the original PHP Inspections (EA Ultimate) [old website](http
     ```sh
     git clone https://github.com/azdanov/ea-ultimate.git
     cd ea-ultimate/
+    cp .env.example .env # Enter GITHUB_TOKEN (with repo_access)
     npm run start
 
     ```
