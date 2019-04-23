@@ -67,7 +67,7 @@ const Pricing = () => (
           </a>
         </div>
       </section>
-      <section className="md:w-1/2 lg:w-1/4 mx-auto sm:mb-6 rounded overflow-hidden md:shadow-2xl">
+      <section className="md:w-1/2 lg:w-1/4 mx-auto sm:mb-6 rounded overflow-hidden shadow-2xl">
         <div className="px-6 py-4 text-center h-full flex flex-col justify-between">
           <div>
             <h3 className="font-bold text-gray-800 text-gray-800 text-xl">

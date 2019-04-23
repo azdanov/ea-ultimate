@@ -43,7 +43,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
           <a
             href="#main-menu-toggle"
             id="main-menu-close"
-            className="icon icon-close w-10 h-6 absolute right-0 md:hidden"
+            className="icon icon-close w-10 h-5 absolute right-0 mr-1 md:hidden"
             aria-label="Close main menu"
             onClick={e => {
               e.preventDefault()
@@ -61,7 +61,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <Patreon
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700"
+              className="hover:text-cool-grey-700 w-5"
             />
           </a>
           <a
@@ -73,7 +73,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <Twitter
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700"
+              className="hover:text-cool-grey-700 w-5"
             />
           </a>
           <a
@@ -85,7 +85,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <GitHub
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700"
+              className="hover:text-cool-grey-700 w-5"
             />
           </a>
           <a
@@ -97,7 +97,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <JetBrains
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700"
+              className="hover:text-cool-grey-700 w-5"
             />
           </a>
         </div>

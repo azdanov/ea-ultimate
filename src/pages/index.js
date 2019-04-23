@@ -11,7 +11,7 @@ const Index = () => {
       <LayoutDocs>
         <div className="w-5/6 mx-auto">
           <div className="flex flex-wrap-reverse lg:flex-no-wrap justify-center items-center mb-6">
-            <Logo brand="EA Extended" width="8rem" height="8rem" />
+            <Logo className="w-32" brand="EA Extended" width="8rem" height="8rem" />
             <div className="ml-6">
               <h1 className="text-4xl font-semibold sm:mx-auto inline-block leading-none">
                 PHP&nbsp;Inspections (EA&nbsp;Extended)

@@ -10,7 +10,7 @@ const Reviews = () => (
         href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-/reviews"
         className="tracking-normal ml-4 bg-white hover:bg-gray-100 text-indigo-500 font-semibold text-2xl py-2 px-4 rounded shadow"
       >
-        See Reviews
+        See&nbsp;Reviews
       </a>
     </p>
   </article>

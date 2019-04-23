@@ -41,7 +41,6 @@ const htmlToReactParser = new HtmlToReactParser()
 
 const Docs = ({ data: { github }, location, pageContext }) => {
   const [headingList, setHeadingList] = useState([])
-  console.log(location)
   const name = location.pathname
     .replace(/\/$/, ``)
     .split(`/`)
