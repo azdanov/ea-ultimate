@@ -10,8 +10,8 @@ const Features = () => (
       Features
     </h2>
     <div className="pb-5 flex flex-wrap">
-      <section className="w-1/2 lg:w-1/4">
-        <Bug className="w-20 h-24 mb-1 text-red-600" />
+      <section className="w-1/2 lg:w-1/4 text-center">
+        <Bug className="w-20 h-24 mb-1 mx-auto text-red-600" />
         <div className="px-4">
           <div className="font-bold text-xl mb-1">Extensive Checks</div>
           <p>
@@ -20,8 +20,8 @@ const Features = () => (
           </p>
         </div>
       </section>
-      <section className="w-1/2 lg:w-1/4">
-        <Comment className="w-20 h-24 mb-1 text-teal-600" />
+      <section className="w-1/2 lg:w-1/4 text-center">
+        <Comment className="w-20 h-24 mb-1 mx-auto text-teal-600" />
         <div className="px-4">
           <div className="font-bold text-xl mb-1">Professional Support</div>
           <p>
@@ -36,8 +36,8 @@ const Features = () => (
           </p>
         </div>
       </section>
-      <section className="w-1/2 lg:w-1/4">
-        <Code className="w-24 h-24 mb-1 text-indigo-600" />
+      <section className="w-1/2 lg:w-1/4 text-center">
+        <Code className="w-24 h-24 mb-1 mx-auto text-indigo-600" />
         <div className="px-4">
           <div className="font-bold text-xl mb-1">IDE Integration</div>
           <p>
@@ -46,8 +46,8 @@ const Features = () => (
           </p>
         </div>
       </section>
-      <section className="w-1/2 lg:w-1/4">
-        <GraduationCap className="w-24 h-24 mb-1 text-blue-600" />
+      <section className="w-1/2 lg:w-1/4 text-center">
+        <GraduationCap className="w-24 h-24 mb-1 mx-auto text-blue-600" />
         <div className="px-4">
           <div className="font-bold text-xl mb-1">Insightful Hints</div>
           <p>
