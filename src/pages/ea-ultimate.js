@@ -17,6 +17,7 @@ const IndexPage = () => (
     <Features />
     <Reviews />
     <Pricing />
+    <div className="mb-16" />
   </Layout>
 )
 

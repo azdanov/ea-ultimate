@@ -8,7 +8,7 @@ const Layout = ({ children, borderTop }) => (
   <div className="antialiased text-cool-grey-900 font-main flex flex-col h-screen">
     <Header />
     <main
-      className={`bg-cool-grey-050 pb-16 flex-1 ${
+      className={`bg-cool-grey-050 flex-1 ${
         borderTop ? `border-t border-cool-grey-100` : ``
       }`}
     >

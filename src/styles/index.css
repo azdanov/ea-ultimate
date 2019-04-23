@@ -31,17 +31,34 @@ p {
   @apply overflow-hidden;
 }
 
-.docs-menu {
-  position: sticky;
-  top: 1rem;
+.icon-link {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgCiAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImN1cnJlbnRDb2xvciI+CiAgPHBhdGggZD0iTTMuOSwxMkMzLjksMTAuMjkgNS4yOSw4LjkgNyw4LjlIMTFWN0g3QTUsNSAwIDAsMCAyLDEyQTUsNSAwIDAsMCA3LDE3SDExVjE1LjFIN0M1LjI5LDE1LjEgMy45LDEzLjcxIDMuOSwxMk04LDEzSDE2VjExSDhWMTNNMTcsN0gxM1Y4LjlIMTdDMTguNzEsOC45IDIwLjEsMTAuMjkgMjAuMSwxMkMyMC4xLDEzLjcxIDE4LjcxLDE1LjEgMTcsMTUuMUgxM1YxN0gxN0E1LDUgMCAwLDAgMjIsMTJBNSw1IDAgMCwwIDE3LDdaIiAvPgo8L3N2Zz4=)
+    center center no-repeat;
 }
 
-.icon {
-  display: none;
+.icon-close {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPiAgPHBhdGggZD0iTTE5LDYuNDFMMTcuNTksNUwxMiwxMC41OUw2LjQxLDVMNSw2LjQxTDEwLjU5LDEyTDUsMTcuNTlMNi40MSwxOUwxMiwxMy40MUwxNy41OSwxOUwxOSwxNy41OUwxMy40MSwxMkwxOSw2LjQxWiIgLz48L3N2Zz4=)
+    center center no-repeat;
+}
+
+.icon-menu {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiB2aWV3Qm94PSIwIDAgMjQgMjQiPiAgPHBhdGggZD0iTTMsNkgyMVY4SDNWNk0zLDExSDIxVjEzSDNWMTFNMywxNkgyMVYxOEgzVjE2WiIgLz48L3N2Zz4=)
+    center center no-repeat;
 }
 
 .w-72 {
-  width: '18rem';
+  width: 18rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .documentation h1:hover .icon,
@@ -54,9 +71,8 @@ p {
   padding-right: 2.5rem;
 }
 
-.icon-link {
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgCiAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImN1cnJlbnRDb2xvciI+CiAgPHBhdGggZD0iTTMuOSwxMkMzLjksMTAuMjkgNS4yOSw4LjkgNyw4LjlIMTFWN0g3QTUsNSAwIDAsMCAyLDEyQTUsNSAwIDAsMCA3LDE3SDExVjE1LjFIN0M1LjI5LDE1LjEgMy45LDEzLjcxIDMuOSwxMk04LDEzSDE2VjExSDhWMTNNMTcsN0gxM1Y4LjlIMTdDMTguNzEsOC45IDIwLjEsMTAuMjkgMjAuMSwxMkMyMC4xLDEzLjcxIDE4LjcxLDE1LjEgMTcsMTUuMUgxM1YxN0gxN0E1LDUgMCAwLDAgMjIsMTJBNSw1IDAgMCwwIDE3LDdaIiAvPgo8L3N2Zz4=')
-    center center no-repeat;
+.documentation .icon {
+  display: none;
 }
 
 .documentation h1 .icon {
@@ -164,5 +180,38 @@ p {
 @screen lg {
   .documentation > * {
     @apply w-3/4;
+  }
+}
+
+/**
+ * Hamburger
+ * @see https://medium.com/@heyoka/responsive-pure-css-off-canvas-hamburger-menu-aebc8d11d793
+ */
+
+.docs-menu:target,
+.docs-menu[aria-expanded='true'] {
+  @apply block left-0 outline-none;
+}
+
+.main-menu:target .menu-close,
+.main-menu[aria-expanded='true'] .menu-close {
+  @apply z-30;
+}
+
+.main-menu:target ul,
+.main-menu[aria-expanded='true'] ul {
+  @apply z-20 relative;
+}
+
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded='true'] + .backdrop {
+  @apply z-10 block;
+}
+
+@supports (position: fixed) {
+  .main-menu,
+  .main-menu:target + .backdrop,
+  .main-menu[aria-expanded='true'] + .backdrop {
+    @apply fixed;
   }
 }

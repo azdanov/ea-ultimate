@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/anchor-has-content */
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import '../styles/index.css'
 import { graphql, Link, useStaticQuery } from 'gatsby'
@@ -10,6 +11,7 @@ import Patreon from './icons/Patreon'
 import JetBrains from './icons/JetBrains'
 
 const LayoutDocs = ({ children, headingList, docName }) => {
+  const [showMenu, setShowMenu] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       github {
@@ -30,7 +32,25 @@ const LayoutDocs = ({ children, headingList, docName }) => {
 
   return (
     <div className="flex">
-      <div className="w-64 ml-3 pb-10 pr-3 mt-8 docs-menu h-screen overflow-auto">
+      <nav
+        id="main-menu"
+        aria-label="Main menu"
+        className={`docs-menu sticky top-0 w-48 ${
+          showMenu ? `-mt-24 -mb-24` : `hidden`
+        } md:block z-20 bg-cool-grey-050 flex-shrink-0 pl-3 pb-10 pr-1 pt-8 h-screen overflow-auto`}
+      >
+        {showMenu && (
+          <a
+            href="#main-menu-toggle"
+            id="main-menu-close"
+            className="icon icon-close w-10 h-6 absolute right-0 md:hidden"
+            aria-label="Close main menu"
+            onClick={e => {
+              e.preventDefault()
+              setShowMenu(false)
+            }}
+          />
+        )}
         <div className="w-32 flex justify-between text-cool-grey-400 mb-4">
           <a
             target="_blank"
@@ -81,7 +101,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             />
           </a>
         </div>
-        <ul className="text-xl sm:mx-auto">
+        <ul className="text-xl sm:mx-auto leading-snug">
           <li className="text-cool-grey-500 mb-3">Documentation</li>
           <li className="text-base mb-2">
             <Link to="/" className="hover:underline" activeClassName="underline">
@@ -121,8 +141,37 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             )
           })}
         </ul>
-      </div>
-      <main className="w-4/5 bg-white pb-8 -mb-16 ml-auto border-l border-cool-gray-100">
+      </nav>
+      {showMenu && (
+        <a
+          href="#main-menu-toggle"
+          className="backdrop block fixed w-screen h-screen z-10 bg-black opacity-75 cursor-pointer left-0 top-0"
+          tabIndex="-1"
+          aria-hidden="true"
+          hidden
+          onClick={e => {
+            e.preventDefault()
+            setShowMenu(false)
+          }}
+        />
+      )}
+      <main className="bg-white overflow-hidden px-4 pb-8 ml-auto border-l border-cool-gray-100">
+        {!showMenu && (
+          <a
+            href="#main-menu"
+            id="main-menu-toggle"
+            className="icon icon-menu w-10 h-10 border-2 ml-2 mb-2 rounded-full border-black left-0 bottom-0 fixed md:hidden"
+            aria-label="Open main menu"
+            onClick={e => {
+              e.preventDefault()
+              setShowMenu(true)
+            }}
+          >
+            <span className="sr-only">Open main menu</span>
+            <span className="fa fa-bars" aria-hidden="true" />
+          </a>
+        )}
+
         <div className="mt-8">{children}</div>
       </main>
     </div>
