@@ -13,12 +13,12 @@ const Header = () => (
         PHP Inspections (EA
         <span className="hidden md:inline-block">&nbsp;Extended</span>)
       </Link>
-      <div className="ml-auto w-56 flex justify-around">
+      <div className="ml-auto w-40 flex justify-around">
         <Link to="/" className="hover:underline">
-          Docs
+          Home
         </Link>
-        <Link to="/ea-ultimate" className="hover:underline">
-          EA Ultimate
+        <Link to="/docs" className="hover:underline">
+          Docs
         </Link>
       </div>
     </nav>
