@@ -3,6 +3,10 @@ const { createPath } = require(`./src/utils`)
 
 /** @typedef {{data: {github: {repository: {object: {entries: [{name: string}]}}}}}} Data */
 
+module.exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }) => {
+  setBabelPlugin({ name: `babel-plugin-tailwind-components` })
+}
+
 module.exports.createPages = async ({ actions, graphql }) => {
   /** @type Data */
   const { data } = await graphql(`
