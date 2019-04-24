@@ -2,7 +2,7 @@
 title: Hello World
 date: 2019-04-24T20:07:07.728Z
 description: Programmable static structure
-featuredimage: /img/favicon.png
+image: /img/favicon.png
 tags:
   - First
   - Awesome
