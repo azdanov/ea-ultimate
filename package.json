@@ -55,7 +55,7 @@
     "remark-autolink-headings": "5.2.0",
     "remark-html": "9.0.0",
     "remark-slug": "5.1.1",
-    "tailwindcss": "1.0.0-beta.4"
+    "tailwindcss": "^1.0.0-beta.5"
   },
   "devDependencies": {
     "babel-jest": "24.7.1",
