@@ -20,11 +20,11 @@ const Docs = () => {
         ]}
       />
       <LayoutDocs>
-        <div className="w-5/6 mx-auto">
-          <div className="flex flex-wrap-reverse lg:flex-no-wrap justify-center items-center mb-6">
+        <div className="mx-auto w-5/6">
+          <div className="flex flex-wrap-reverse items-center justify-center lg:flex-no-wrap mb-6">
             <Logo className="w-32" brand="EA Extended" width="8rem" height="8rem" />
             <div className="ml-6">
-              <h1 className="text-4xl font-semibold sm:mx-auto inline-block leading-none">
+              <h1 className="font-semibold inline-block leading-none sm:mx-auto text-4xl">
                 PHP&nbsp;Inspections (EA&nbsp;Extended)
               </h1>
               <p className="text-cool-grey-500">
@@ -32,7 +32,7 @@ const Docs = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-light-blue-vivid-700 hover:underline"
+                  className="hover:underline text-light-blue-vivid-700"
                   href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-"
                 >
                   tool
@@ -44,7 +44,7 @@ const Docs = () => {
           </div>
           <div className="text-xl">
             <p>It covers:</p>
-            <ul className="list-disc ml-8">
+            <ul className="ml-8 list-disc">
               <li>Architecture Related Issues</li>
               <li>Weak Types Control and Possible Code Construct Simplifications</li>
               <li>Performance Issues</li>

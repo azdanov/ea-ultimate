@@ -22,9 +22,9 @@ const Layout = ({ children, borderTop }) => {
       <Header title={data.site.siteMetadata.title} />
       <main
         className={classNames([
+          { 'border-cool-grey-100 border-t': borderTop },
           `bg-cool-grey-050`,
           `flex-1`,
-          { 'border-t border-cool-grey-100': borderTop },
         ])}
       >
         {children}

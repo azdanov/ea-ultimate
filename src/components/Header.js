@@ -4,16 +4,16 @@ import PropTypes from 'prop-types'
 import LogoTextless from './icons/LogoTextless'
 
 const Header = ({ title }) => (
-  <header className="container py-6">
-    <nav className="flex text-xl items-center">
+  <header className="py-6 container">
+    <nav className="flex items-center text-xl">
       <Link
         to="/"
-        className="ml-2 sm:ml-0 font-bold text-2xl tracking-tight flex items-center"
+        className="flex font-bold items-center ml-2 sm:ml-0 text-2xl tracking-tight"
       >
         <LogoTextless className="mr-3" />
         {title}
       </Link>
-      <div className="ml-auto w-40 flex justify-around">
+      <div className="flex justify-around ml-auto w-40">
         <Link to="/" className="hover:underline">
           Home
         </Link>

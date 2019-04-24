@@ -6,10 +6,10 @@ import Seo from '../components/Seo'
 const NotFoundPage = () => (
   <Layout>
     <Seo title="404: Not found" />
-    <div className="text-center flex flex-col justify-center h-full">
-      <h1 className="text-5xl mt-2">Not Found</h1>
+    <div className="flex flex-col h-full justify-center text-center">
+      <h1 className="mt-2 text-5xl">Not Found</h1>
       <p className="text-2xl">You just hit a page that doesn't exist...</p>
-      <Link to="/" className="text-2xl text-light-blue-vivid-700 hover:underline">
+      <Link to="/" className="hover:underline text-2xl text-light-blue-vivid-700">
         Try Home?
       </Link>
     </div>

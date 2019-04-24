@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import '../styles/index.css'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import { capitalize } from 'lodash'
+import classNames from 'classnames'
 import { createPath } from '../utils'
 import GitHub from './icons/Github'
 import Twitter from './icons/Twitter'
@@ -35,15 +36,29 @@ const LayoutDocs = ({ children, headingList, docName }) => {
       <nav
         id="main-menu"
         aria-label="Main menu"
-        className={`docs-menu sticky top-0 w-48 ${
-          showMenu ? `-mt-24 -mb-24` : `hidden`
-        } md:block z-20 bg-cool-grey-050 flex-shrink-0 pl-3 pb-10 pr-1 pt-8 h-screen overflow-auto`}
+        className={classNames([
+          { '-mt-24 -mb-24': showMenu, hidden: !showMenu },
+          `bg-cool-grey-050`,
+          `docs-menu`,
+          `flex-shrink-0`,
+          `h-screen`,
+          `md:block`,
+          `z-20`,
+          `overflow-auto`,
+          `pb-10`,
+          `pl-3`,
+          `pr-1`,
+          `pt-8`,
+          `sticky`,
+          `top-0`,
+          `w-48`,
+        ])}
       >
         {showMenu && (
           <a
             href="#main-menu-toggle"
             id="main-menu-close"
-            className="icon icon-close w-10 h-5 absolute right-0 mr-1 md:hidden"
+            className="absolute h-5 icon icon-close md:hidden mr-1 right-0 w-10"
             aria-label="Close main menu"
             onClick={e => {
               e.preventDefault()
@@ -51,7 +66,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             }}
           />
         )}
-        <div className="w-32 flex justify-between text-cool-grey-400 mb-4">
+        <div className="flex justify-between mb-4 text-cool-grey-400 w-32">
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -61,7 +76,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <Patreon
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700 w-5"
+              className="w-5 hover:text-cool-grey-700"
             />
           </a>
           <a
@@ -73,7 +88,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <Twitter
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700 w-5"
+              className="w-5 hover:text-cool-grey-700"
             />
           </a>
           <a
@@ -85,7 +100,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <GitHub
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700 w-5"
+              className="w-5 hover:text-cool-grey-700"
             />
           </a>
           <a
@@ -97,13 +112,13 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             <JetBrains
               width="1.5rem"
               height="1.5rem"
-              className="hover:text-cool-grey-700 w-5"
+              className="w-5 hover:text-cool-grey-700"
             />
           </a>
         </div>
-        <ul className="text-xl sm:mx-auto leading-snug">
-          <li className="text-cool-grey-500 mb-3">Documentation</li>
-          <li className="text-base mb-2">
+        <ul className="leading-snug sm:mx-auto text-xl">
+          <li className="mb-3 text-cool-grey-500">Documentation</li>
+          <li className="mb-2 text-base">
             <Link to="/" className="hover:underline" activeClassName="underline">
               Introduction
             </Link>
@@ -112,12 +127,12 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             if (!name.endsWith(`.md`)) return null
             const doc = name.replace(`.md`, ``).toLowerCase()
             const subMenu = () => (
-              <ul className="border-l-2 border-cool-grey-100 mt-2 leading-tight">
+              <ul className="border-cool-grey-100 border-l-2 leading-tight mt-2">
                 {headingList.map(({ id, text }) => (
-                  <li key={id} className="text-base mb-2 overflow-hidden">
+                  <li key={id} className="mb-2 overflow-hidden text-base">
                     <Link
                       to={`docs/${createPath(name)}/#${id}`}
-                      className={`inline-block hover:underline ml-3`}
+                      className="hover:underline inline-block ml-3"
                       activeClassName="underline"
                     >
                       {capitalize(text)}
@@ -127,7 +142,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
               </ul>
             )
             return (
-              <li key={oid} className="text-base mb-2 overflow-hidden">
+              <li key={oid} className="mb-2 overflow-hidden text-base">
                 <Link
                   to={`docs/${createPath(name)}`}
                   className="hover:underline"
@@ -145,7 +160,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
       {showMenu && (
         <a
           href="#main-menu-toggle"
-          className="backdrop block fixed w-screen h-screen z-10 bg-black opacity-75 cursor-pointer left-0 top-0"
+          className="z-10 w-screen top-0 opacity-75 left-0 h-screen fixed cursor-pointer block bg-black backdrop"
           tabIndex="-1"
           aria-hidden="true"
           hidden
@@ -155,12 +170,12 @@ const LayoutDocs = ({ children, headingList, docName }) => {
           }}
         />
       )}
-      <main className="bg-white overflow-hidden px-4 pb-8 ml-auto border-l border-cool-gray-100">
+      <main className="px-4 pb-8 overflow-hidden ml-auto border-l border-cool-gray-100 bg-white">
         {!showMenu && (
           <a
             href="#main-menu"
             id="main-menu-toggle"
-            className="icon icon-menu w-10 h-10 border-2 ml-2 mb-2 rounded-full border-black left-0 bottom-0 fixed md:hidden"
+            className="w-10 rounded-full ml-2 md:hidden mb-2 left-0 icon-menu icon h-10 fixed bottom-0 border-black border-2"
             aria-label="Open main menu"
             onClick={e => {
               e.preventDefault()
@@ -168,7 +183,6 @@ const LayoutDocs = ({ children, headingList, docName }) => {
             }}
           >
             <span className="sr-only">Open main menu</span>
-            <span className="fa fa-bars" aria-hidden="true" />
           </a>
         )}
 
