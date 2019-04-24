@@ -25,8 +25,8 @@
   },
   "dependencies": {
     "@sindresorhus/slugify": "0.9.1",
-    "babel-plugin-styled-components": "^1.10.0",
-    "babel-plugin-tailwind-components": "^0.5.10",
+    "babel-plugin-styled-components": "1.10.0",
+    "babel-plugin-tailwind-components": "0.5.10",
     "classnames": "2.2.6",
     "dotenv": "7.0.0",
     "gatsby": "2.3.16",
@@ -42,7 +42,7 @@
     "gatsby-plugin-react-helmet": "3.0.12",
     "gatsby-plugin-sass": "2.0.11",
     "gatsby-plugin-sharp": "2.0.32",
-    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-styled-components": "3.0.7",
     "gatsby-source-filesystem": "2.0.29",
     "gatsby-source-graphql": "2.0.18",
     "gatsby-transformer-sharp": "2.1.17",
@@ -59,8 +59,9 @@
     "remark-autolink-headings": "5.2.0",
     "remark-html": "9.0.0",
     "remark-slug": "5.1.1",
-    "styled-components": "^4.2.0",
-    "tailwind.macro": "^1.0.0-alpha.2",
+    "styled-components": "4.2.0",
+    "styled-icons": "7.10.0",
+    "tailwind.macro": "1.0.0-alpha.2",
     "tailwindcss": "1.0.0-beta.5"
   },
   "devDependencies": {

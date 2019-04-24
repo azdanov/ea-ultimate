@@ -1,63 +1,89 @@
 import React from 'react'
-import Bug from '../icons/Bug'
-import Comment from '../icons/Comment'
-import Code from '../icons/Code'
-import GraduationCap from '../icons/GraduationCap'
+import tw from 'tailwind.macro'
+import styled from 'styled-components'
+import { BugReport, Code, Comment, LightbulbOutline } from 'styled-icons/material'
+import { LightBlueLink } from '../styled'
 
 const Features = () => (
-  <article className="container">
-    <h2 id="features" className="text-center text-4xl mt-8 mb-4 font-semibold">
-      Features
-    </h2>
-    <div className="flex flex-wrap pb-5">
-      <section className="lg:w-1/4 sm:w-1/2 text-center w-full">
-        <Bug className="h-24 mb-1 mx-auto text-red-600 w-20" />
-        <div className="px-4">
-          <div className="font-bold mb-1 text-xl">Extensive Checks</div>
+  <Container>
+    <Heading id="features">Features</Heading>
+    <FeatureList>
+      <Feature>
+        <RedBug title="Software bug icon" />
+        <FeatureDescription>
+          <FeatureTitle>Extensive Checks</FeatureTitle>
           <p>
             Identify bugs, security, and performance issues before they hit production
             environment: 190 rules organized in 12 groups.
           </p>
-        </div>
-      </section>
-      <section className="lg:w-1/4 sm:w-1/2 text-center w-full">
-        <Comment className="h-24 mb-1 mx-auto text-teal-600 w-20" />
-        <div className="px-4">
-          <div className="font-bold mb-1 text-xl">Professional Support</div>
+        </FeatureDescription>
+      </Feature>
+      <Feature>
+        <TealComment title="Comment icon" />
+        <FeatureDescription>
+          <FeatureTitle>Professional Support</FeatureTitle>
           <p>
             Bugs getting fixed fast, documentation gets extended with practical advice:
             check our{` `}
-            <a
-              className="text-light-blue-vivid-700 hover:underline"
-              href="https://plugins.jetbrains.com/plugin/10215-php-inspections-ea-ultimate-"
-            >
+            <LightBlueLink href="https://plugins.jetbrains.com/plugin/10215-php-inspections-ea-ultimate-">
               latest release notes.
-            </a>
+            </LightBlueLink>
           </p>
-        </div>
-      </section>
-      <section className="lg:w-1/4 sm:w-1/2 text-center w-full">
-        <Code className="h-24 mb-1 mx-auto text-indigo-600 w-24" />
-        <div className="px-4">
-          <div className="font-bold mb-1 text-xl">IDE Integration</div>
+        </FeatureDescription>
+      </Feature>
+      <Feature>
+        <IndigoCode title="Code brackets icon" />
+        <FeatureDescription>
+          <FeatureTitle>IDE Integration</FeatureTitle>
           <p>
             Increase team's velocity with on-the-fly analysis and quick-fixes with our
             plugin for PhpStorm 2016.2+ and IdeaUltimate.
           </p>
-        </div>
-      </section>
-      <section className="lg:w-1/4 sm:w-1/2 text-center w-full">
-        <GraduationCap className="h-24 mb-1 mx-auto text-blue-600 w-24" />
-        <div className="px-4">
-          <div className="font-bold mb-1 text-xl">Insightful Hints</div>
+        </FeatureDescription>
+      </Feature>
+      <Feature>
+        <BlueLightbulb title="Lightbulb outline icon" />
+        <FeatureDescription>
+          <FeatureTitle>Insightful Hints</FeatureTitle>
           <p>
             Better understanding of code quality and improvement space: Architecture,
             Probable bugs, Code Style and more.
           </p>
-        </div>
-      </section>
-    </div>
-  </article>
+        </FeatureDescription>
+      </Feature>
+    </FeatureList>
+  </Container>
 )
+
+const Container = styled.article`
+  ${tw`container`}
+`
+const Heading = styled.h2`
+  ${tw`text-center text-4xl mt-8 mb-4 font-semibold`}
+`
+const FeatureList = styled.div`
+  ${tw`flex flex-wrap pb-5`}
+`
+const Feature = styled.section`
+  ${tw`sm:w-1/2 lg:w-1/4 text-center w-full`}
+`
+const FeatureDescription = styled.div`
+  ${tw`px-4`}
+`
+const FeatureTitle = styled.h3`
+  ${tw`font-bold mb-1 text-xl`}
+`
+const RedBug = styled(BugReport)`
+  ${tw`h-24 mb-1 mx-auto w-20 text-red-600`}
+`
+const TealComment = styled(Comment)`
+  ${tw`h-24 mb-1 mx-auto w-20 text-teal-600`}
+`
+const IndigoCode = styled(Code)`
+  ${tw`h-24 mb-1 mx-auto w-20 text-indigo-600`}
+`
+const BlueLightbulb = styled(LightbulbOutline)`
+  ${tw`h-24 mb-1 mx-auto w-20 text-blue-600`}
+`
 
 export default Features
