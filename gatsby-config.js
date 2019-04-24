@@ -2,7 +2,7 @@ require(`dotenv`).config()
 
 module.exports = {
   siteMetadata: {
-    title: `PHP Inspections (EA Extended)`,
+    title: `PHP Inspections (EA)`,
     description: `A Static Code Analyzer for PHPStorm.`,
     author: `@kalessil`,
   },

@@ -10,8 +10,15 @@ import Pricing from '../components/ea-ultimate/Pricing'
 const Index = () => (
   <Layout borderTop={false}>
     <Seo
-      title="EA Ultimate"
-      keywords={[`PHP`, `Inspection`, `PHP Inspections`, `EA Ultimate`]}
+      title="Home"
+      keywords={[
+        `PHP`,
+        `Inspection`,
+        `PHP Inspections`,
+        `EA Ultimate`,
+        `Features`,
+        `Price`,
+      ]}
     />
     <Hero />
     <Features />

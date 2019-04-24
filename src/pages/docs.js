@@ -7,7 +7,18 @@ import LayoutDocs from '../components/LayoutDocs'
 const Docs = () => {
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo
+        title="Docs"
+        keywords={[
+          `PHP`,
+          `Inspection`,
+          `PHP Inspections`,
+          `EA Extended`,
+          `EA Ultimate`,
+          `Documentation`,
+          `Docs`,
+        ]}
+      />
       <LayoutDocs>
         <div className="w-5/6 mx-auto">
           <div className="flex flex-wrap-reverse lg:flex-no-wrap justify-center items-center mb-6">
