@@ -119,7 +119,7 @@ const LayoutDocs = ({ children, headingList, currentCategory }) => {
         <ul className="leading-snug sm:mx-auto text-xl">
           <li className="mb-3 text-cool-grey-500">Documentation</li>
           <li className="mb-2 text-base">
-            <Link to="/" className="hover:underline" activeClassName="underline">
+            <Link to="/docs" className="hover:underline" activeClassName="underline">
               Introduction
             </Link>
           </li>
