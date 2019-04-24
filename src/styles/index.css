@@ -9,10 +9,6 @@ svg text {
   pointer-events: none;
 }
 
-.transition {
-  transition: all 0.15s;
-}
-
 ul,
 p {
   @apply mb-4;

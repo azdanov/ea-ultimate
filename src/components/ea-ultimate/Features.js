@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
 import { BugReport, Code, Comment, LightbulbOutline } from 'styled-icons/material'
-import { LightBlueLink } from '../styled'
+import { LightBlueLink, Heading } from '../styled'
 
 const Features = () => (
   <Container>
@@ -57,9 +57,6 @@ const Features = () => (
 
 const Container = styled.article`
   ${tw`container`}
-`
-const Heading = styled.h2`
-  ${tw`text-center text-4xl mt-8 mb-4 font-semibold`}
 `
 const FeatureList = styled.div`
   ${tw`flex flex-wrap pb-5`}
