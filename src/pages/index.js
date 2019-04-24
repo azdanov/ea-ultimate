@@ -24,7 +24,7 @@ const Index = () => (
     <Features />
     <Reviews />
     <Pricing />
-    <div className="mb-16" />
+    <div className="mb-6" />
   </Layout>
 )
 

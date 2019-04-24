@@ -43,7 +43,7 @@ const Docs = () => {
             </div>
           </div>
           <div className="text-xl">
-            <p>It covers:</p>
+            <p className="mb-0">It covers:</p>
             <ul className="ml-8 list-disc">
               <li>Architecture Related Issues</li>
               <li>Weak Types Control and Possible Code Construct Simplifications</li>

@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../icons/Logo'
 
 const Hero = () => (
-  <div className="gradient">
+  <div className="gradient overflow-hidden">
     <div className="container">
       <div className="py-6 items-center flex-wrap flex">
         <div className="ml-2 sm:ml-0 sm:w-2/3 text-white w-full">
