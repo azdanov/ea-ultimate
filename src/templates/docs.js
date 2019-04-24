@@ -51,7 +51,7 @@ const Docs = ({ data: { github }, location, pageContext }) => {
     `https://raw.githubusercontent.com/kalessil/phpinspectionsea/master/docs/$1`,
   )
 
-  const link = `https://github.com/kalessil/phpinspectionsea/blob/master/docs/${pageContext.location
+  const editLink = `https://github.com/kalessil/phpinspectionsea/blob/master/docs/${pageContext.expression
     .split(`/`)
     .pop()}`
 
@@ -91,7 +91,7 @@ const Docs = ({ data: { github }, location, pageContext }) => {
           <blockquote className="mt-8">
             <p>
               Found a typo or have an improvement?{` `}
-              <a target="_blank" rel="noopener noreferrer" href={link}>
+              <a target="_blank" rel="noopener noreferrer" href={editLink}>
                 Edit this page.
               </a>
             </p>
@@ -109,10 +109,10 @@ Docs.propTypes = {
 }
 
 export const query = graphql`
-  query($location: String!) {
+  query($expression: String!) {
     github {
       repository(owner: "kalessil", name: "phpinspectionsea") {
-        object(expression: $location) {
+        object(expression: $expression) {
           ... on GitHub_Blob {
             text
           }

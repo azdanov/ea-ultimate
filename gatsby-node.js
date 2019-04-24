@@ -27,7 +27,7 @@ module.exports.createPages = async ({ actions, graphql }) => {
       path: `docs/${createPath(name)}`,
       component: path.resolve(`./src/templates/docs.js`),
       context: {
-        location: `master:docs/${name}`,
+        expression: `master:docs/${name}`,
       },
     })
   })
