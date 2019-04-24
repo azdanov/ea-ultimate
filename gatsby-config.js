@@ -11,8 +11,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-styled-components`,
@@ -61,5 +59,7 @@ module.exports = {
         fetchOptions: {},
       },
     },
+    `gatsby-plugin-netlify-cache`,
+    `gatsby-plugin-netlify`,
   ],
 }
