@@ -1,4 +1,6 @@
 import React from 'react'
+import tw from 'tailwind.macro'
+import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
@@ -24,8 +26,12 @@ const Index = () => (
     <Features />
     <Reviews />
     <Pricing />
-    <div className="mb-6" />
+    <Spacer />
   </Layout>
 )
+
+const Spacer = styled.div`
+  ${tw`mb-6`}
+`
 
 export default Index
