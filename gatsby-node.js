@@ -1,7 +1,10 @@
 const path = require(`path`)
 const { createPath } = require(`./src/utils`)
 
+/** @typedef {{data: {github: {repository: {object: {entries: [{name: string}]}}}}}} Data */
+
 module.exports.createPages = async ({ actions, graphql }) => {
+  /** @type Data */
   const { data } = await graphql(`
     query {
       github {
@@ -18,17 +21,14 @@ module.exports.createPages = async ({ actions, graphql }) => {
     }
   `)
 
-  data.github.repository.object.entries.forEach(
-    /** @param {string} name */
-    ({ name }) => {
-      if (!name.endsWith(`.md`)) return
-      actions.createPage({
-        path: `docs/${createPath(name)}`,
-        component: path.resolve(`./src/templates/docs.js`),
-        context: {
-          location: `master:docs/${name}`,
-        },
-      })
-    },
-  )
+  data.github.repository.object.entries.forEach(({ name }) => {
+    if (!name.endsWith(`.md`)) return
+    actions.createPage({
+      path: `docs/${createPath(name)}`,
+      component: path.resolve(`./src/templates/docs.js`),
+      context: {
+        location: `master:docs/${name}`,
+      },
+    })
+  })
 }

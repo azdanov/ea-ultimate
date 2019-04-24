@@ -8,13 +8,12 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import HtmlToReact from 'html-to-react'
 import slug from 'remark-slug'
 import headings from 'remark-autolink-headings'
-import GithubSlugger from 'github-slugger'
+import slugify from '@sindresorhus/slugify'
 import theme from '../styles/prism'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import LayoutDocs from '../components/LayoutDocs'
 
-const slugger = new GithubSlugger()
 const HtmlToReactParser = HtmlToReact.Parser
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
 const processingInstructions = [
@@ -57,34 +56,28 @@ const Docs = ({ data: { github }, location, pageContext }) => {
     .pop()}`
 
   useLayoutEffect(() => {
-    slugger.reset()
-    const list = []
-
     remark()
       .use(() => {
         return tree => {
-          list.push(
-            ...tree.children
+          setHeadingList(
+            tree.children
               .filter(({ type }) => type === `heading`)
               .map(child => {
                 return {
-                  parent: name,
-                  id: slugger.slug(child.children[child.children.length - 1].value),
-                  text: child.children[child.children.length - 1].value,
+                  id: slugify(child.children[child.children.length - 1].value),
+                  value: child.children[child.children.length - 1].value,
                 }
               }),
           )
         }
       })
       .processSync(text)
-
-    setHeadingList(list)
   }, [])
 
   return (
     <Layout>
       <Seo title={capitalize(name)} />
-      <LayoutDocs headingList={headingList} docName={name}>
+      <LayoutDocs headingList={headingList} currentCategory={name}>
         <div className="documentation">
           {htmlToReactParser.parseWithInstructions(
             remark()

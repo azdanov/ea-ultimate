@@ -11,7 +11,7 @@ import Twitter from './icons/Twitter'
 import Patreon from './icons/Patreon'
 import JetBrains from './icons/JetBrains'
 
-const LayoutDocs = ({ children, headingList, docName }) => {
+const LayoutDocs = ({ children, headingList, currentCategory }) => {
   const [showMenu, setShowMenu] = useState(false)
   const data = useStaticQuery(graphql`
     query {
@@ -125,17 +125,17 @@ const LayoutDocs = ({ children, headingList, docName }) => {
           </li>
           {entries.map(({ name, oid }) => {
             if (!name.endsWith(`.md`)) return null
-            const doc = name.replace(`.md`, ``).toLowerCase()
+            const category = name.replace(`.md`, ``)
             const subMenu = () => (
               <ul className="border-cool-grey-100 border-l-2 leading-tight mt-2">
-                {headingList.map(({ id, text }) => (
+                {headingList.map(({ id, value: subCategory }) => (
                   <li key={id} className="mb-2 overflow-hidden text-base">
                     <Link
                       to={`docs/${createPath(name)}/#${id}`}
                       className="hover:underline inline-block ml-3"
                       activeClassName="underline"
                     >
-                      {capitalize(text)}
+                      {subCategory}
                     </Link>
                   </li>
                 ))}
@@ -149,9 +149,9 @@ const LayoutDocs = ({ children, headingList, docName }) => {
                   activeClassName="underline"
                   partiallyActive
                 >
-                  {capitalize(doc)}
+                  {capitalize(category)}
                 </Link>
-                {doc === docName ? subMenu() : null}
+                {category === currentCategory ? subMenu() : null}
               </li>
             )
           })}
@@ -194,7 +194,7 @@ const LayoutDocs = ({ children, headingList, docName }) => {
 
 LayoutDocs.propTypes = {
   children: PropTypes.node.isRequired,
-  docName: PropTypes.string,
+  currentCategory: PropTypes.string,
   headingList: PropTypes.arrayOf(
     PropTypes.shape({
       level: PropTypes.number,
