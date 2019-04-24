@@ -1,8 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import Logo from '../components/icons/Logo'
 import LayoutDocs from '../components/LayoutDocs'
+import { LightBlueLink, MainTitle } from '../components/styled'
 
 const Docs = () => {
   return (
@@ -20,31 +23,28 @@ const Docs = () => {
         ]}
       />
       <LayoutDocs>
-        <div className="mx-auto w-5/6">
-          <div className="flex flex-wrap-reverse items-center justify-center lg:flex-no-wrap mb-6">
-            <Logo className="w-32" brand="EA Extended" width="8rem" height="8rem" />
-            <div className="ml-6">
-              <h1 className="font-semibold inline-block leading-none sm:mx-auto text-4xl">
-                PHP&nbsp;Inspections (EA&nbsp;Extended)
-              </h1>
-              <p className="text-cool-grey-500">
+        <Wrapper>
+          <Intro>
+            <LogoExtended brand="EA Extended" width="8rem" height="8rem" />
+            <div>
+              <DocsTitle>PHP&nbsp;Inspections (EA&nbsp;Extended)</DocsTitle>
+              <p>
                 This project is an OSS Static Code Analysis{` `}
-                <a
+                <LightBlueLink
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline text-light-blue-vivid-700"
                   href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-"
                 >
                   tool
-                </a>
+                </LightBlueLink>
                 {` `}
                 for PhpStorm (2016.2+) and Idea Ultimate.
               </p>
             </div>
-          </div>
-          <div className="text-xl">
-            <p className="mb-0">It covers:</p>
-            <ul className="ml-8 list-disc">
+          </Intro>
+          <Description>
+            <p>It covers:</p>
+            <ul>
               <li>Architecture Related Issues</li>
               <li>Weak Types Control and Possible Code Construct Simplifications</li>
               <li>Performance Issues</li>
@@ -66,11 +66,39 @@ const Docs = () => {
               On some projects CPU and therefore battery usage could be intensive, so it
               should be taken into account when traveling
             </p>
-          </div>
-        </div>
+          </Description>
+        </Wrapper>
       </LayoutDocs>
     </Layout>
   )
 }
+
+const DocsTitle = styled(MainTitle)`
+  ${tw`mb-1`}
+`
+
+const LogoExtended = styled(Logo)`
+  ${tw`w-32 lg:mr-6`}
+`
+
+const Wrapper = styled.div`
+  ${tw`mx-auto w-5/6`}
+`
+
+const Intro = styled.div`
+  ${tw`flex flex-wrap-reverse items-center justify-center lg:flex-no-wrap mb-6`}
+`
+
+const Description = styled.div`
+  ${tw`text-xl`}
+
+  p:first-of-type {
+    ${tw`mb-1`}
+  }
+
+  ul {
+    ${tw`ml-8 list-disc`}
+  }
+`
 
 export default Docs

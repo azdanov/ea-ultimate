@@ -2,11 +2,11 @@ import React from 'react'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
 import { BugReport, Code, Comment, LightbulbOutline } from 'styled-icons/material'
-import { LightBlueLink, Heading } from '../styled'
+import { LightBlueLink, Title } from '../styled'
 
 const Features = () => (
   <Container>
-    <Heading id="features">Features</Heading>
+    <Title id="features">Features</Title>
     <FeatureList>
       <Feature>
         <RedBug title="Software bug icon" />

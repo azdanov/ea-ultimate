@@ -2,14 +2,14 @@ import React from 'react'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
 import Logo from '../icons/Logo'
-import { Container } from '../styled'
+import { Container, MainTitle } from '../styled'
 
 const Hero = () => (
   <Gradient>
     <Container>
       <Body>
         <Content>
-          <Title>Php Inspections (EA&nbsp;Ultimate)</Title>
+          <MainTitle>Php Inspections (EA&nbsp;Ultimate)</MainTitle>
           <Text>
             Based on{` `}
             <a
@@ -48,9 +48,6 @@ const Body = styled.div`
 `
 const Content = styled.div`
   ${tw`ml-2 sm:ml-0 sm:w-2/3 text-white w-full`}
-`
-const Title = styled.h1`
-  ${tw`font-semibold mb-3 sm:text-left text-4xl text-center`}
 `
 const Text = styled.p`
   ${tw`text-xl`}

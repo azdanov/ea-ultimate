@@ -1,16 +1,16 @@
 import React from 'react'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
-import { Container, Heading } from '../styled'
+import { Container, Title } from '../styled'
 
 const Pricing = () => (
   <Container>
-    <Heading id="pricing">Pricing and payment</Heading>
+    <Title id="pricing">Pricing and payment</Title>
     <Body>
       <Section>
         <Wrapper>
           <div>
-            <Title>Early Supporter License</Title>
+            <PricingTitle>Early Supporter License</PricingTitle>
             <Price>
               $30
               <span className="meta"> / year</span>
@@ -33,7 +33,7 @@ const Pricing = () => (
       <Section>
         <Wrapper>
           <div>
-            <Title>OSS Supporter License</Title>
+            <PricingTitle>OSS Supporter License</PricingTitle>
             <Price>
               $5<span className="meta"> / month</span>
             </Price>
@@ -64,7 +64,7 @@ const Pricing = () => (
       <Section>
         <Wrapper>
           <div>
-            <Title>Personal License</Title>
+            <PricingTitle>Personal License</PricingTitle>
             <Price>
               $50<span className="meta"> / year</span>
             </Price>
@@ -90,7 +90,7 @@ const Pricing = () => (
         <Wrapper>
           <div>
             <div className="items-center inline-flex">
-              <Title>Commercial&nbsp;License</Title>
+              <PricingTitle>Commercial&nbsp;License</PricingTitle>
               {` `}
               <Badge>New</Badge>
             </div>
@@ -128,7 +128,7 @@ const Section = styled.section`
 const Wrapper = styled.div`
   ${tw`flex flex-col h-full justify-between px-6 py-4 text-center`}
 `
-const Title = styled.h3`
+const PricingTitle = styled.h3`
   ${tw`text-xl text-gray-800 font-bold`}
 `
 const Badge = styled.span`
