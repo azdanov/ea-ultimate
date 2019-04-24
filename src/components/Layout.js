@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
 import { graphql, useStaticQuery } from 'gatsby'
+import tw from 'tailwind.macro'
+import styled from 'styled-components'
 import Header from './Header'
 import '../styles/index.css'
 import { Footer } from './Footer'
 
 const Layout = ({ children, borderTop }) => {
-  const data = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query LayoutQuery {
       site {
         siteMetadata {
@@ -18,19 +19,11 @@ const Layout = ({ children, borderTop }) => {
   `)
 
   return (
-    <div className="antialiased text-cool-grey-900 font-main flex flex-col h-screen">
-      <Header title={data.site.siteMetadata.title} />
-      <main
-        className={classNames([
-          { 'border-cool-grey-100 border-t': borderTop },
-          `bg-cool-grey-050`,
-          `flex-1`,
-        ])}
-      >
-        {children}
-      </main>
+    <App>
+      <Header title={site.siteMetadata.title} />
+      <Main borderTop={borderTop}>{children}</Main>
       <Footer />
-    </div>
+    </App>
   )
 }
 
@@ -42,5 +35,14 @@ Layout.propTypes = {
 Layout.defaultProps = {
   borderTop: true,
 }
+
+const App = styled.div`
+  ${tw`subpixel-antialiased text-cool-grey-900 font-main flex flex-col h-screen`}
+`
+
+const Main = styled.main`
+  border-top-width: ${({ borderTop }) => (borderTop ? `1px` : 0)};
+  ${tw`border-cool-grey-100 bg-cool-grey-050 flex-1`}
+`
 
 export default Layout
