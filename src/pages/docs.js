@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import Logo from '../components/icons/Logo'
 import LayoutDocs from '../components/LayoutDocs'
-import { LightBlueLink, MainTitle } from '../components/styled'
+import { LightBlueAnchor, MainTitle } from '../components/styled'
 
 const Docs = () => {
   return (
@@ -30,13 +30,13 @@ const Docs = () => {
               <DocsTitle>PHP&nbsp;Inspections (EA&nbsp;Extended)</DocsTitle>
               <p>
                 This project is an OSS Static Code Analysis{` `}
-                <LightBlueLink
+                <LightBlueAnchor
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://plugins.jetbrains.com/plugin/7622-php-inspections-ea-extended-"
                 >
                   tool
-                </LightBlueLink>
+                </LightBlueAnchor>
                 {` `}
                 for PhpStorm (2016.2+) and Idea Ultimate.
               </p>

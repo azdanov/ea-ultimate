@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
-import { Container, Title } from '../styled'
+import { Badge, Container, Title } from '../styled'
 
 const Pricing = () => (
   <Container>
@@ -130,9 +130,6 @@ const Wrapper = styled.div`
 `
 const PricingTitle = styled.h3`
   ${tw`text-xl text-gray-800 font-bold`}
-`
-const Badge = styled.span`
-  ${tw`bg-indigo-500 leading-none ml-2 px-2 py-1 rounded-full text-white text-xs uppercase`}
 `
 const ButtonBaseLink = styled.a`
   transition: all 0.15s;

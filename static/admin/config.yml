@@ -22,4 +22,4 @@ collections:
           required: false,
         }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Tag', name: 'tags', widget: 'list' }

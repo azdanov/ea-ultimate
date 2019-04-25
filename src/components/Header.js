@@ -13,12 +13,20 @@ const Header = ({ title }) => (
         <LogoTextless className="mr-3" />
         {title}
       </Link>
-      <div className="flex justify-around ml-auto w-40">
-        <Link to="/" className="hover:underline">
+      <div className="flex justify-around ml-auto w-56">
+        <Link to="/" className="hover:underline" activeClassName="underline">
           Home
         </Link>
-        <Link to="/docs" className="hover:underline">
+        <Link
+          to="/docs"
+          className="hover:underline"
+          activeClassName="underline"
+          partiallyActive
+        >
           Docs
+        </Link>
+        <Link to="/blog" className="hover:underline" activeClassName="underline">
+          Blog
         </Link>
       </div>
     </nav>
