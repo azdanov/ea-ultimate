@@ -1,46 +1,51 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
+import { size } from 'lodash'
 import { graphql, Link } from 'gatsby'
+import slugify from '@sindresorhus/slugify'
 import Layout from '../components/Layout'
+import { Container } from '../components/styled'
 
 const Blog = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark } = data
 
   return (
     <Layout>
-      <section className="section">
-        <div className="container content">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {post.frontmatter.title}
-              </h1>
-              <p>{post.frontmatter.description}</p>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              {post.frontmatter.tag && post.frontmatter.tag.length > 0 ? (
-                <div style={{ marginTop: `4rem` }}>
-                  <h4>Tags</h4>
-                  <ul className="taglist">
-                    {post.frontmatter.tag.map(tag => (
-                      <li key={`${tag}tag`}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
+      <Container>
+        <h1>{markdownRemark.frontmatter.title}</h1>
+        <p>{markdownRemark.frontmatter.description}</p>
+        <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+        {size(markdownRemark.frontmatter.tags) > 0 ? (
+          <div>
+            <h4>Tags</h4>
+            <ul>
+              {markdownRemark.frontmatter.tags.map(tag => (
+                <li key={`${tag}tag`}>
+                  <Link to={`/tags/${slugify(tag)}/`}>{tag}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
+        ) : null}
+      </Container>
     </Layout>
   )
 }
 
 Blog.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
+    markdownRemark: PropTypes.shape({
+      id: PropTypes.string,
+      html: PropTypes.string,
+      frontmatter: PropTypes.arrayOf(
+        PropTypes.shape({
+          date: PropTypes.string,
+          title: PropTypes.string,
+          description: PropTypes.string,
+          tags: PropTypes.arrayOf(PropTypes.string),
+        }),
+      ),
+    }),
   }),
 }
 
