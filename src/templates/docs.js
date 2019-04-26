@@ -1,42 +1,13 @@
 import { graphql } from 'gatsby'
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import remark from 'remark'
-import htmlRenderer from 'remark-html'
-import { capitalize, constant, eq } from 'lodash'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import HtmlToReact from 'html-to-react'
-import slug from 'remark-slug'
-import headings from 'remark-autolink-headings'
+import { capitalize } from 'lodash'
 import slugify from '@sindresorhus/slugify'
-import theme from '../styles/prism'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import LayoutDocs from '../components/LayoutDocs'
-
-const HtmlToReactParser = HtmlToReact.Parser
-const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
-const processingInstructions = [
-  {
-    // Replace <pre> with SyntaxHighlighter.
-    shouldProcessNode: node => eq(node.name, `pre`),
-    processNode: (node, children, index) => {
-      // Support <code> tags inside of <pre> tags.
-      const nodeToProcess = node.children[0].name === `code` ? node.children[0] : node
-      const language = nodeToProcess.attribs.class.split(`-`).pop()
-      return (
-        <SyntaxHighlighter key={index} language={language} style={theme}>
-          {nodeToProcess.children.map(n => n.data).join(``)}
-        </SyntaxHighlighter>
-      )
-    },
-  },
-  {
-    shouldProcessNode: constant(true),
-    processNode: processNodeDefinitions.processDefaultNode,
-  },
-]
-const htmlToReactParser = new HtmlToReactParser()
+import { renderReactWithPrismJs } from '../utils'
 
 const Docs = ({ data: { github }, location, pageContext }) => {
   const [headingList, setHeadingList] = useState([])
@@ -79,15 +50,7 @@ const Docs = ({ data: { github }, location, pageContext }) => {
       <Seo title={capitalize(name)} />
       <LayoutDocs headingList={headingList} currentCategory={name}>
         <div className="documentation">
-          {htmlToReactParser.parseWithInstructions(
-            remark()
-              .use(slug)
-              .use(headings)
-              .use(htmlRenderer)
-              .processSync(text).contents,
-            constant(true),
-            processingInstructions,
-          )}
+          {renderReactWithPrismJs(text)}
           <blockquote className="mt-8">
             <p>
               Found a typo or have an improvement?{` `}

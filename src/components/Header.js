@@ -25,7 +25,12 @@ const Header = ({ title }) => (
         >
           Docs
         </Link>
-        <Link to="/blog" className="hover:underline" activeClassName="underline">
+        <Link
+          to="/blog"
+          className="hover:underline"
+          activeClassName="underline"
+          partiallyActive
+        >
           Blog
         </Link>
       </div>

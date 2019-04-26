@@ -8,7 +8,7 @@ const indigo400 = `#647acb`
 const yellow700 = `#cb6e17`
 const red400 = `#ef4e4e`
 
-export default {
+module.exports = {
   'code[class*="language-"]': {
     fontFamily: `Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace`,
     fontSize: `14px`,

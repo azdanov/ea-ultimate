@@ -21,6 +21,14 @@ export const Badge = styled.span`
   ${tw`bg-indigo-500 leading-none ml-2 px-2 py-1 rounded-full text-white text-xs uppercase`}
 `
 
+export const TagList = styled.ul`
+  ${tw`flex flex-wrap -mt-2`}
+`
+
+export const TagListItem = styled.li`
+  ${tw`bg-indigo-500 leading-none ml-2 mt-2 px-2 py-1 rounded-full text-white text-xs uppercase`}
+`
+
 export const Container = styled.div`
   width: 100%;
   margin-right: auto;

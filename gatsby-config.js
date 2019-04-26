@@ -58,7 +58,7 @@ module.exports = {
             options: {
               destinationDir: `static`,
             },
-          },
+          }
         ],
       },
     },
