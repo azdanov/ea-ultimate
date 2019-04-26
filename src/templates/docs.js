@@ -3,7 +3,7 @@ import React, { useState, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import remark from 'remark'
 import htmlRenderer from 'remark-html'
-import { capitalize, constant } from 'lodash'
+import { capitalize, constant, eq } from 'lodash'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import HtmlToReact from 'html-to-react'
 import slug from 'remark-slug'
@@ -19,7 +19,7 @@ const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React)
 const processingInstructions = [
   {
     // Replace <pre> with SyntaxHighlighter.
-    shouldProcessNode: node => node.name && node.name === `pre`,
+    shouldProcessNode: node => eq(node.name, `pre`),
     processNode: (node, children, index) => {
       // Support <code> tags inside of <pre> tags.
       const nodeToProcess = node.children[0].name === `code` ? node.children[0] : node
