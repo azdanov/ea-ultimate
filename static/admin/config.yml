@@ -14,12 +14,17 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'text' }
       - {
-          label: 'Image',
-          name: 'image',
-          widget: 'image',
-          required: false,
+          label: 'Description',
+          name: 'description',
+          description: 'A short description for the blog post',
+          widget: 'text',
         }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tag', name: 'tags', widget: 'list' }
+      - {
+          label: 'Tag',
+          name: 'tags',
+          description: 'A comma separated list of tags',
+          widget: 'list',
+        }
