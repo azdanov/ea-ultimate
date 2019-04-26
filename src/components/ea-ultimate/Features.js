@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
 import { BugReport, Code, Comment, LightbulbOutline } from 'styled-icons/material'
-import { LightBlueLink, Title } from '../styled'
+import { LightBlueAnchor, Title } from '../styled'
 
 const Features = () => (
   <Container>
@@ -25,9 +25,9 @@ const Features = () => (
           <p>
             Bugs getting fixed fast, documentation gets extended with practical advice:
             check our{` `}
-            <LightBlueLink href="https://plugins.jetbrains.com/plugin/10215-php-inspections-ea-ultimate-">
+            <LightBlueAnchor href="https://plugins.jetbrains.com/plugin/10215-php-inspections-ea-ultimate-">
               latest release notes.
-            </LightBlueLink>
+            </LightBlueAnchor>
           </p>
         </FeatureDescription>
       </Feature>
