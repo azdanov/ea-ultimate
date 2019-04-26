@@ -3,6 +3,7 @@ const { get, uniq } = require(`lodash`)
 const { fmImagesToRelative } = require(`gatsby-remark-relative-images`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require(`path`)
+const createPaginatedPages = require(`gatsby-paginate`)
 
 const { createPath } = require(`./src/utils`)
 
@@ -39,7 +40,7 @@ module.exports.createPages = async ({ actions, graphql }) => {
     if (!name.endsWith(`.md`)) return
     actions.createPage({
       path: `docs/${createPath(name)}`,
-      component: path.resolve(`./src/templates/docs.js`),
+      component: path.resolve(`./src/templates/docsPage.js`),
       context: {
         expression: `master:docs/${name}`,
       },
@@ -48,15 +49,22 @@ module.exports.createPages = async ({ actions, graphql }) => {
 
   const posts = await graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             id
+            timeToRead
             fields {
               slug
             }
             frontmatter {
+              description
+              title
               tags
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }
@@ -69,12 +77,21 @@ module.exports.createPages = async ({ actions, graphql }) => {
     return
   }
 
+  createPaginatedPages({
+    edges: posts.data.allMarkdownRemark.edges,
+    createPage: actions.createPage,
+    pageTemplate: path.resolve(`src/templates/blogIndex.js`),
+    pageLength: 2,
+    pathPrefix: `blog`,
+    context: {},
+  })
+
   posts.data.allMarkdownRemark.edges.forEach(edge => {
     const { id } = edge.node
     actions.createPage({
       path: edge.node.fields.slug,
-      tags: edge.node.frontmatter.tag,
-      component: path.resolve(`src/templates/blog.js`),
+      tags: edge.node.frontmatter.tagPage,
+      component: path.resolve(`src/templates/blogPage.js`),
       context: {
         id,
       },
@@ -93,7 +110,7 @@ module.exports.createPages = async ({ actions, graphql }) => {
   tags.forEach(tag => {
     actions.createPage({
       path: `/tags/${slugify(tag)}/`,
-      component: path.resolve(`src/templates/tag.js`),
+      component: path.resolve(`src/templates/tagPage.js`),
       context: {
         tag,
       },

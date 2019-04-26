@@ -10,7 +10,30 @@ import { Container, TagList, TagListItem } from '../components/styled'
 import Seo from '../components/Seo'
 import { renderReactWithPrismJs } from '../utils'
 
-const Blog = ({ data }) => {
+export const BlogTemplate = ({ body, description, tags, title, date }) => (
+  <Wrapper>
+    <Title>{title}</Title>
+    <Description>
+      <Date>{date}</Date>
+      {description}
+    </Description>
+    <Main>{renderReactWithPrismJs(body)}</Main>
+    {size(tags) > 0 ? (
+      <Tags>
+        <h4 className="header">Tagged as</h4>
+        <TagList>
+          {tags.map(tag => (
+            <TagListItem key={`${tag}tag`}>
+              <Link to={`/tags/${slugify(tag)}/`}>{tag}</Link>
+            </TagListItem>
+          ))}
+        </TagList>
+      </Tags>
+    ) : null}
+  </Wrapper>
+)
+
+const BlogPage = ({ data }) => {
   const { markdownRemark } = data
 
   return (
@@ -20,26 +43,13 @@ const Blog = ({ data }) => {
         description={markdownRemark.frontmatter.description}
       />
       <Container>
-        <Wrapper>
-          <Title>{markdownRemark.frontmatter.title}</Title>
-          <Description>
-            <Date>{markdownRemark.frontmatter.date}</Date>
-            {markdownRemark.frontmatter.description}
-          </Description>
-          <Main>{renderReactWithPrismJs(markdownRemark.rawMarkdownBody)}</Main>
-          {size(markdownRemark.frontmatter.tags) > 0 ? (
-            <Tags>
-              <h4 className="header">Tagged as</h4>
-              <TagList>
-                {markdownRemark.frontmatter.tags.map(tag => (
-                  <TagListItem key={`${tag}tag`}>
-                    <Link to={`/tags/${slugify(tag)}/`}>{tag}</Link>
-                  </TagListItem>
-                ))}
-              </TagList>
-            </Tags>
-          ) : null}
-        </Wrapper>
+        <BlogTemplate
+          title={markdownRemark.frontmatter.title}
+          date={markdownRemark.frontmatter.date}
+          description={markdownRemark.frontmatter.description}
+          body={markdownRemark.rawMarkdownBody}
+          tags={markdownRemark.frontmatter.tags}
+        />
       </Container>
     </Layout>
   )
@@ -156,11 +166,11 @@ const Tags = styled.aside`
   }
 `
 
-Blog.propTypes = {
+BlogPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       id: PropTypes.string,
-      html: PropTypes.string,
+      rawMarkdownBody: PropTypes.string,
       frontmatter: PropTypes.arrayOf(
         PropTypes.shape({
           date: PropTypes.string,
@@ -173,13 +183,20 @@ Blog.propTypes = {
   }),
 }
 
-export default Blog
+BlogTemplate.propTypes = {
+  date: PropTypes.string,
+  title: PropTypes.string,
+  body: PropTypes.string,
+  description: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+}
+
+export default BlogPage
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       rawMarkdownBody
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

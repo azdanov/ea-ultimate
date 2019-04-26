@@ -9,7 +9,7 @@ import Layout from '../components/Layout'
 import LayoutDocs from '../components/LayoutDocs'
 import { renderReactWithPrismJs } from '../utils'
 
-const Docs = ({ data: { github }, location, pageContext }) => {
+const DocsPage = ({ data: { github }, location, pageContext }) => {
   const [headingList, setHeadingList] = useState([])
   const name = location.pathname
     .replace(/\/$/, ``)
@@ -65,7 +65,7 @@ const Docs = ({ data: { github }, location, pageContext }) => {
   )
 }
 
-Docs.propTypes = {
+DocsPage.propTypes = {
   data: PropTypes.shape({}),
   location: PropTypes.shape({}),
   pageContext: PropTypes.shape({ location: PropTypes.string }),
@@ -85,4 +85,4 @@ export const query = graphql`
   }
 `
 
-export default Docs
+export default DocsPage

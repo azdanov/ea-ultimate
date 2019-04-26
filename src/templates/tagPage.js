@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import { Container, LightBlueLink } from '../components/styled'
 
-const Tag = ({ data: { allMarkdownRemark }, pageContext }) => {
+const TagPage = ({ data: { allMarkdownRemark }, pageContext }) => {
   const { edges } = allMarkdownRemark
   const { tag } = pageContext
   const { totalCount } = allMarkdownRemark
@@ -70,12 +70,12 @@ const Footer = styled.footer`
   ${tw`flex justify-center my-6`}
 `
 
-Tag.propTypes = {
+TagPage.propTypes = {
   data: PropTypes.shape({}),
   pageContext: PropTypes.shape({ tag: PropTypes.string }),
 }
 
-export default Tag
+export default TagPage
 
 export const tagPageQuery = graphql`
   query Tag($tag: String) {

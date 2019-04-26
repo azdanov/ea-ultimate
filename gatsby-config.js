@@ -15,7 +15,18 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        cmsConfig: `/static/admin/config.yml`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -58,7 +69,7 @@ module.exports = {
             options: {
               destinationDir: `static`,
             },
-          }
+          },
         ],
       },
     },
