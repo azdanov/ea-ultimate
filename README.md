@@ -26,6 +26,7 @@ A demo redesign of the original PHP Inspections (EA Ultimate) [old website](http
     <tr>
       <td><img src="https://user-images.githubusercontent.com/6123841/56841867-f66a7380-6898-11e9-9a56-2c5e2dae684b.png"/></td>
       <td><img src="https://user-images.githubusercontent.com/6123841/56841607-78f23380-6897-11e9-9ee2-a8d3cfe0362e.png"/></td>
+      <td><img src="https://user-images.githubusercontent.com/6123841/56851024-045cda80-6913-11e9-891b-e031659a0b65.png"/></td>
     </tr>
   </tbody>
 </table>
