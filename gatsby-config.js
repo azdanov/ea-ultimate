@@ -5,6 +5,7 @@ module.exports = {
     title: `PHP Inspections (EA)`,
     description: `A Static Code Analyzer for PHPStorm.`,
     author: `@kalessil`,
+    siteUrl: `https://awesome-jepsen-eff5a1.netlify.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +16,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {

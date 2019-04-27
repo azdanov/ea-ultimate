@@ -710,7 +710,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2":
+"@babel/runtime@7.3.4", "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2":
   version "7.3.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
   integrity sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
@@ -6371,12 +6371,23 @@ gatsby-link@^2.0.16:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-paginate@^1.0.17:
+gatsby-paginate@1.0.17:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/gatsby-paginate/-/gatsby-paginate-1.0.17.tgz#aa5536c569bc35f7517558eed7191980d737135a"
   integrity sha512-tRjWuME0avbAyHSLXucEqs4wNWslTlJx7JAf4Qso17AZqulAvaVIIbIveCWLnbutdVsfAKXqZ5aHfbHe6RrGGw==
   dependencies:
     path "^0.12.7"
+
+gatsby-plugin-advanced-sitemap@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-advanced-sitemap/-/gatsby-plugin-advanced-sitemap-1.0.4.tgz#0153ada72cc59485013ef876e4fa7c5fc95b5c1d"
+  integrity sha512-GdSo3BZKcfOJNBvL8G1+T0Oc+sm4Z3+xyPk6iJctgi+Il8F9EUr6eGTr1MrASTfB9v/HTfUAw7qLPt1NAsAqjw==
+  dependencies:
+    "@babel/runtime" "7.3.4"
+    fs-extra "^7.0.1"
+    lodash "^4.17.11"
+    moment "^2.24.0"
+    xml "^1.0.1"
 
 gatsby-plugin-favicon@3.1.6:
   version "3.1.6"
@@ -6404,7 +6415,7 @@ gatsby-plugin-netlify-cache@1.1.0:
     babel-runtime "^6.26.0"
     fs-extra "^7.0.0"
 
-gatsby-plugin-netlify-cms-paths@^1.2.1:
+gatsby-plugin-netlify-cms-paths@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cms-paths/-/gatsby-plugin-netlify-cms-paths-1.2.1.tgz#4f536542aa29f01d0b5985f6c2b05bfae79e1e97"
   integrity sha512-5j9Q0WaBQphz2GspffF76ucMZBI3C1XpcnzARYOLITUEDGLlepZcdk6AWur9vRz+y/QlinzEWZrHDioor+zXYg==
@@ -11973,7 +11984,7 @@ pnp-webpack-plugin@^1.4.1:
   dependencies:
     ts-pnp "^1.0.0"
 
-polished@^3.2.0:
+polished@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.2.0.tgz#65045e080704a6ba524fb3f32eb99d4ed2e46c91"
   integrity sha512-uXIr2Nu5SU5khDa4JwWh8q5czi4GoJf+U1za5LN59Tk0mL/W3egZrPL0H0ADXeompCp0QhmiK9zs06gw0J5m4Q==
@@ -16794,6 +16805,11 @@ xml2js@^0.4.5:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
+
+xml@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xmlbuilder@~9.0.1:
   version "9.0.7"
