@@ -9,10 +9,26 @@
 
 A demo redesign of the original PHP Inspections (EA Ultimate) [old website](https://kalessil.github.io/php-inspections-ultimate.html). See [new version here.](https://awesome-jepsen-eff5a1.netlify.com/)
 
-| Before | After  |
-|:-:|:-:|
-| ![Screenshot Before](https://user-images.githubusercontent.com/6123841/56352592-3ca83e80-61d8-11e9-9a46-d5fc72fafe58.png)  | ![Screenshot After](https://user-images.githubusercontent.com/6123841/56461659-29a39300-63bf-11e9-993a-c4b98602698b.png)  |
-
+<table>
+  <thead>
+    <tr>
+      <th>Before</th>
+      <th>After</th>
+      <th>New</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="https://user-images.githubusercontent.com/6123841/56352592-3ca83e80-61d8-11e9-9a46-d5fc72fafe58.png"/></td>
+      <td><img src="https://user-images.githubusercontent.com/6123841/56841606-78f23380-6897-11e9-8a4b-8df365f2db6d.png"/></td>
+      <td><img src="https://user-images.githubusercontent.com/6123841/56841608-78f23380-6897-11e9-8f7a-584c384e9034.png"/></td>
+    </tr>
+    <tr>
+      <td><img src="https://user-images.githubusercontent.com/6123841/56841867-f66a7380-6898-11e9-9a56-2c5e2dae684b.png"/></td>
+      <td><img src="https://user-images.githubusercontent.com/6123841/56841607-78f23380-6897-11e9-9ee2-a8d3cfe0362e.png"/></td>
+    </tr>
+  </tbody>
+</table>
 
 ## 🚀 Quick start
 
@@ -27,6 +43,7 @@ A demo redesign of the original PHP Inspections (EA Ultimate) [old website](http
     npm run start
 
     ```
+
 2.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
