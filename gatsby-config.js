@@ -6,6 +6,8 @@ module.exports = {
     description: `A Static Code Analyzer for PHPStorm.`,
     author: `@kalessil`,
     siteUrl: `https://awesome-jepsen-eff5a1.netlify.com/`,
+    owner: `Vladimir Reznichenko`,
+    ownerUrl: `https://github.com/kalessil`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
