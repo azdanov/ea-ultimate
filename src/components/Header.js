@@ -11,29 +11,19 @@ const Header = ({ title }) => (
     <StyledHeader>
       <Nav>
         <LinkLogo to="/">
-          <LogoTextless className="mr-3" />
-          {title}
+          <LogoTextless />
+          <Title>{title}</Title>
         </LinkLogo>
         <Links>
-          <Link to="/" className="hover:underline" activeClassName="underline">
+          <StyledLink to="/" activeClassName="active">
             Home
-          </Link>
-          <Link
-            to="/docs"
-            className="hover:underline"
-            activeClassName="underline"
-            partiallyActive
-          >
+          </StyledLink>
+          <StyledLink to="/docs" activeClassName="active" partiallyActive>
             Docs
-          </Link>
-          <Link
-            to="/blog"
-            className="hover:underline"
-            activeClassName="underline"
-            partiallyActive
-          >
+          </StyledLink>
+          <StyledLink to="/blog" activeClassName="active" partiallyActive>
             Blog
-          </Link>
+          </StyledLink>
         </Links>
       </Nav>
     </StyledHeader>
@@ -51,6 +41,15 @@ const LinkLogo = styled(Link)`
 `
 const Links = styled.section`
   ${tw`flex justify-around ml-auto w-56`}
+`
+const Title = styled.span`
+  ${tw`ml-3`}
+`
+const StyledLink = styled(Link)`
+  ${tw`hover:underline`}
+  &.active {
+    ${tw`underline`}
+  }
 `
 
 Header.propTypes = {
