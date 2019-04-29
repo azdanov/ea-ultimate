@@ -65,7 +65,7 @@ const Date = styled.small`
   ${tw`block mb-2`}
 `
 const Description = styled.blockquote`
-  ${tw`my-6 border-l-4 border-cool-grey-100 pl-3 text-cool-grey-400 text-lg`}
+  ${tw`my-6 border-l-4 border-cool-gray-100 pl-3 text-cool-gray-400 text-lg`}
 `
 const Main = styled.main`
   ${tw`text-xl`}
@@ -138,7 +138,7 @@ const Main = styled.main`
   }
 
   p > code {
-    ${tw`text-base px-1 inline-flex rounded bg-cool-grey-050 text-cool-grey-900`}
+    ${tw`text-base px-1 inline-flex rounded bg-cool-gray-050 text-cool-grey-900`}
   }
 
   blockquote > * {

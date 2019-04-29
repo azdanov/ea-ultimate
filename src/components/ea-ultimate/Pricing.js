@@ -151,6 +151,6 @@ const Headline = styled.h4`
   ${tw`mb-2 font-bold`}
 `
 const Text = styled.p`
-  ${tw`text-base text-grey-darker`}
+  ${tw`text-base text-gray-darker`}
 `
 export default Pricing

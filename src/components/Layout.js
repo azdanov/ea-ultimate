@@ -37,12 +37,12 @@ Layout.defaultProps = {
 }
 
 const App = styled.div`
-  ${tw`subpixel-antialiased text-cool-grey-900 font-main flex flex-col h-screen`}
+  ${tw`subpixel-antialiased text-cool-gray-900 font-main flex flex-col h-screen`}
 `
 
 const Main = styled.main`
   border-top-width: ${({ borderTop }) => (borderTop ? `1px` : 0)};
-  ${tw`border-cool-grey-100 bg-cool-grey-050 flex-1`}
+  ${tw`border-cool-gray-100 bg-cool-gray-050 flex-1`}
 `
 
 export default Layout

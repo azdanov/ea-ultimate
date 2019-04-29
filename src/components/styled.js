@@ -6,7 +6,7 @@ export const LightBlueLink = styled(Link)`
   ${tw`hover:underline text-light-blue-vivid-700`}
 `
 export const LightBlueLinkInactive = styled.span`
-  ${tw`text-cool-grey-500 cursor-not-allowed`}
+  ${tw`text-cool-gray-500 cursor-not-allowed`}
 `
 export const LightBlueAnchor = styled.a`
   ${tw`hover:underline text-light-blue-vivid-700`}
