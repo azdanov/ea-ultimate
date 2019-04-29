@@ -8143,7 +8143,12 @@ type MarkdownRemarkGroupConnection {
 }
 
 type PageInfo {
+    currentPage: Int!
     hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+    itemCount: Int!
+    pageCount: Int!
+    perPage: Int
 }
 
 type Query {
@@ -8240,8 +8245,36 @@ type SitePageConnection {
 
 type SitePageContext {
     expression: String
+    first: Boolean
+    group: [SitePageContextGroup]
     id: String
+    index: Int
+    last: Boolean
+    pageCount: Int
+    pathPrefix: String
     tag: String
+}
+
+type SitePageContextGroup {
+    node: SitePageContextGroupNode
+}
+
+type SitePageContextGroupNode {
+    fields: SitePageContextGroupNodeFields
+    frontmatter: SitePageContextGroupNodeFrontmatter
+    id: String
+    timeToRead: Int
+}
+
+type SitePageContextGroupNodeFields {
+    slug: String
+}
+
+type SitePageContextGroupNodeFrontmatter {
+    date: String
+    description: String
+    tags: [String]
+    title: String
 }
 
 type SitePageEdge {
@@ -8328,29 +8361,23 @@ type SitePluginPackageJsonPeerDependencies {
 }
 
 type SitePluginPluginOptions {
-    backgroundColor: String
+    cmsConfig: String
     destinationDir: String
     fieldName: String
     fonts: [SitePluginPluginOptionsFonts]
     headers: SitePluginPluginOptionsHeaders
-    ignoreFileExtensions: [String]
-    linkImagesToOriginal: Boolean
     logo: String
     maxWidth: Int
+    modulePath: String
     name: String
     path: String
     pathCheck: Boolean
-    pathPrefix: String
     plugins: [SitePluginPluginOptionsPlugins]
     printRejected: Boolean
-    showCaptions: Boolean
     tailwind: Boolean
-    tracedSVG: Boolean
     typeName: String
     url: String
     whitelist: [String]
-    withWebp: Boolean
-    wrapperStyle: String
 }
 
 type SitePluginPluginOptionsFonts {
@@ -8373,22 +8400,17 @@ type SitePluginPluginOptionsPlugins {
 }
 
 type SitePluginPluginOptionsPluginsPluginOptions {
-    backgroundColor: String
     destinationDir: String
-    ignoreFileExtensions: [String]
-    linkImagesToOriginal: Boolean
     maxWidth: Int
     name: String
-    pathPrefix: String
-    showCaptions: Boolean
-    tracedSVG: Boolean
-    withWebp: Boolean
-    wrapperStyle: String
 }
 
 type SiteSiteMetadata {
     author: String
     description: String
+    owner: String
+    ownerUrl: String
+    siteUrl: String
     title: String
 }
 
@@ -10104,6 +10126,9 @@ enum SiteFieldsEnum {
     port
     siteMetadata___author
     siteMetadata___description
+    siteMetadata___owner
+    siteMetadata___ownerUrl
+    siteMetadata___siteUrl
     siteMetadata___title
 }
 
@@ -10151,7 +10176,15 @@ enum SitePageFieldsEnum {
     componentChunkName
     componentPath
     context___expression
+    context___first
+    context___group
+    context___group___node___id
+    context___group___node___timeToRead
     context___id
+    context___index
+    context___last
+    context___pageCount
+    context___pathPrefix
     context___tag
     id
     internalComponentName
@@ -10263,21 +10296,19 @@ enum SitePageFieldsEnum {
     pluginCreator___parent___parent___children
     pluginCreator___parent___parent___id
     pluginCreator___pluginFilepath
-    pluginCreator___pluginOptions___backgroundColor
+    pluginCreator___pluginOptions___cmsConfig
     pluginCreator___pluginOptions___destinationDir
     pluginCreator___pluginOptions___fieldName
     pluginCreator___pluginOptions___fonts
     pluginCreator___pluginOptions___fonts___family
     pluginCreator___pluginOptions___fonts___variants
     pluginCreator___pluginOptions___headers___Authorization
-    pluginCreator___pluginOptions___ignoreFileExtensions
-    pluginCreator___pluginOptions___linkImagesToOriginal
     pluginCreator___pluginOptions___logo
     pluginCreator___pluginOptions___maxWidth
+    pluginCreator___pluginOptions___modulePath
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
-    pluginCreator___pluginOptions___pathPrefix
     pluginCreator___pluginOptions___plugins
     pluginCreator___pluginOptions___plugins___browserAPIs
     pluginCreator___pluginOptions___plugins___id
@@ -10286,14 +10317,10 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___plugins___resolve
     pluginCreator___pluginOptions___plugins___version
     pluginCreator___pluginOptions___printRejected
-    pluginCreator___pluginOptions___showCaptions
     pluginCreator___pluginOptions___tailwind
-    pluginCreator___pluginOptions___tracedSVG
     pluginCreator___pluginOptions___typeName
     pluginCreator___pluginOptions___url
     pluginCreator___pluginOptions___whitelist
-    pluginCreator___pluginOptions___withWebp
-    pluginCreator___pluginOptions___wrapperStyle
     pluginCreator___resolve
     pluginCreator___ssrAPIs
     pluginCreator___version
@@ -10406,48 +10433,34 @@ enum SitePluginFieldsEnum {
     parent___parent___parent___children
     parent___parent___parent___id
     pluginFilepath
-    pluginOptions___backgroundColor
+    pluginOptions___cmsConfig
     pluginOptions___destinationDir
     pluginOptions___fieldName
     pluginOptions___fonts
     pluginOptions___fonts___family
     pluginOptions___fonts___variants
     pluginOptions___headers___Authorization
-    pluginOptions___ignoreFileExtensions
-    pluginOptions___linkImagesToOriginal
     pluginOptions___logo
     pluginOptions___maxWidth
+    pluginOptions___modulePath
     pluginOptions___name
     pluginOptions___path
     pluginOptions___pathCheck
-    pluginOptions___pathPrefix
     pluginOptions___plugins
     pluginOptions___plugins___browserAPIs
     pluginOptions___plugins___id
     pluginOptions___plugins___name
     pluginOptions___plugins___pluginFilepath
-    pluginOptions___plugins___pluginOptions___backgroundColor
     pluginOptions___plugins___pluginOptions___destinationDir
-    pluginOptions___plugins___pluginOptions___ignoreFileExtensions
-    pluginOptions___plugins___pluginOptions___linkImagesToOriginal
     pluginOptions___plugins___pluginOptions___maxWidth
     pluginOptions___plugins___pluginOptions___name
-    pluginOptions___plugins___pluginOptions___pathPrefix
-    pluginOptions___plugins___pluginOptions___showCaptions
-    pluginOptions___plugins___pluginOptions___tracedSVG
-    pluginOptions___plugins___pluginOptions___withWebp
-    pluginOptions___plugins___pluginOptions___wrapperStyle
     pluginOptions___plugins___resolve
     pluginOptions___plugins___version
     pluginOptions___printRejected
-    pluginOptions___showCaptions
     pluginOptions___tailwind
-    pluginOptions___tracedSVG
     pluginOptions___typeName
     pluginOptions___url
     pluginOptions___whitelist
-    pluginOptions___withWebp
-    pluginOptions___wrapperStyle
     resolve
     ssrAPIs
     version
@@ -11799,8 +11812,40 @@ input SiteFilterInput {
 
 input SitePageContextFilterInput {
     expression: StringQueryOperatorInput
+    first: BooleanQueryOperatorInput
+    group: SitePageContextGroupFilterListInput
     id: StringQueryOperatorInput
+    index: IntQueryOperatorInput
+    last: BooleanQueryOperatorInput
+    pageCount: IntQueryOperatorInput
+    pathPrefix: StringQueryOperatorInput
     tag: StringQueryOperatorInput
+}
+
+input SitePageContextGroupFilterInput {
+    node: SitePageContextGroupNodeFilterInput
+}
+
+input SitePageContextGroupFilterListInput {
+    elemMatch: SitePageContextGroupFilterInput
+}
+
+input SitePageContextGroupNodeFieldsFilterInput {
+    slug: StringQueryOperatorInput
+}
+
+input SitePageContextGroupNodeFilterInput {
+    fields: SitePageContextGroupNodeFieldsFilterInput
+    frontmatter: SitePageContextGroupNodeFrontmatterFilterInput
+    id: StringQueryOperatorInput
+    timeToRead: IntQueryOperatorInput
+}
+
+input SitePageContextGroupNodeFrontmatterFilterInput {
+    date: StringQueryOperatorInput
+    description: StringQueryOperatorInput
+    tags: StringQueryOperatorInput
+    title: StringQueryOperatorInput
 }
 
 input SitePageFilterInput {
@@ -11882,29 +11927,23 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 }
 
 input SitePluginPluginOptionsFilterInput {
-    backgroundColor: StringQueryOperatorInput
+    cmsConfig: StringQueryOperatorInput
     destinationDir: StringQueryOperatorInput
     fieldName: StringQueryOperatorInput
     fonts: SitePluginPluginOptionsFontsFilterListInput
     headers: SitePluginPluginOptionsHeadersFilterInput
-    ignoreFileExtensions: StringQueryOperatorInput
-    linkImagesToOriginal: BooleanQueryOperatorInput
     logo: StringQueryOperatorInput
     maxWidth: IntQueryOperatorInput
+    modulePath: StringQueryOperatorInput
     name: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
-    pathPrefix: StringQueryOperatorInput
     plugins: SitePluginPluginOptionsPluginsFilterListInput
     printRejected: BooleanQueryOperatorInput
-    showCaptions: BooleanQueryOperatorInput
     tailwind: BooleanQueryOperatorInput
-    tracedSVG: BooleanQueryOperatorInput
     typeName: StringQueryOperatorInput
     url: StringQueryOperatorInput
     whitelist: StringQueryOperatorInput
-    withWebp: BooleanQueryOperatorInput
-    wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginPluginOptionsFontsFilterInput {
@@ -11935,17 +11974,9 @@ input SitePluginPluginOptionsPluginsFilterListInput {
 }
 
 input SitePluginPluginOptionsPluginsPluginOptionsFilterInput {
-    backgroundColor: StringQueryOperatorInput
     destinationDir: StringQueryOperatorInput
-    ignoreFileExtensions: StringQueryOperatorInput
-    linkImagesToOriginal: BooleanQueryOperatorInput
     maxWidth: IntQueryOperatorInput
     name: StringQueryOperatorInput
-    pathPrefix: StringQueryOperatorInput
-    showCaptions: BooleanQueryOperatorInput
-    tracedSVG: BooleanQueryOperatorInput
-    withWebp: BooleanQueryOperatorInput
-    wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginSortInput {
@@ -11956,6 +11987,9 @@ input SitePluginSortInput {
 input SiteSiteMetadataFilterInput {
     author: StringQueryOperatorInput
     description: StringQueryOperatorInput
+    owner: StringQueryOperatorInput
+    ownerUrl: StringQueryOperatorInput
+    siteUrl: StringQueryOperatorInput
     title: StringQueryOperatorInput
 }
 
