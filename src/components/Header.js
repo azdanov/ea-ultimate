@@ -4,41 +4,44 @@ import PropTypes from 'prop-types'
 import tw from 'tailwind.macro'
 import styled from 'styled-components'
 import LogoTextless from './icons/LogoTextless'
+import { Container } from './styled'
 
 const Header = ({ title }) => (
-  <StyledHeader>
-    <Nav>
-      <LinkLogo to="/">
-        <LogoTextless className="mr-3" />
-        {title}
-      </LinkLogo>
-      <Links>
-        <Link to="/" className="hover:underline" activeClassName="underline">
-          Home
-        </Link>
-        <Link
-          to="/docs"
-          className="hover:underline"
-          activeClassName="underline"
-          partiallyActive
-        >
-          Docs
-        </Link>
-        <Link
-          to="/blog"
-          className="hover:underline"
-          activeClassName="underline"
-          partiallyActive
-        >
-          Blog
-        </Link>
-      </Links>
-    </Nav>
-  </StyledHeader>
+  <Container>
+    <StyledHeader>
+      <Nav>
+        <LinkLogo to="/">
+          <LogoTextless className="mr-3" />
+          {title}
+        </LinkLogo>
+        <Links>
+          <Link to="/" className="hover:underline" activeClassName="underline">
+            Home
+          </Link>
+          <Link
+            to="/docs"
+            className="hover:underline"
+            activeClassName="underline"
+            partiallyActive
+          >
+            Docs
+          </Link>
+          <Link
+            to="/blog"
+            className="hover:underline"
+            activeClassName="underline"
+            partiallyActive
+          >
+            Blog
+          </Link>
+        </Links>
+      </Nav>
+    </StyledHeader>
+  </Container>
 )
 
 const StyledHeader = styled.header`
-  ${tw`py-6 container`}
+  ${tw`py-6`}
 `
 const Nav = styled.nav`
   ${tw`flex items-center text-xl`}
