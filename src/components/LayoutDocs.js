@@ -47,11 +47,13 @@ const LayoutDocs = ({ children, headingList, currentCategory }) => {
           `overflow-auto`,
           `pb-10`,
           `pl-3`,
+          `lg:pl-4`,
           `pr-1`,
           `pt-8`,
           `sticky`,
           `top-0`,
           `w-48`,
+          `lg:w-56`,
         ])}
       >
         {showMenu && (
